@@ -1,0 +1,420 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "E-commerce-Backend",
+    "dateExported": "2024-02-01T14:29:43.494Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "65289ccc-0e7a-4d75-a6b3-9b64e2ca9da2",
+            "name": "Users",
+            "containerId": "",
+            "created": "2024-02-01T05:17:29.328Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "9c097cd1-267b-4762-99d0-dca13865ac4f",
+            "name": "Sessions",
+            "containerId": "",
+            "created": "2024-02-01T05:18:11.233Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "bb4b484e-84b3-4704-bef1-29cdca7d6d0e",
+            "name": "Products",
+            "containerId": "",
+            "created": "2024-02-01T05:18:21.369Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "1ec9d6a9-2ca6-4280-b5e2-c58e0929f5df",
+            "name": "Cart",
+            "containerId": "",
+            "created": "2024-02-01T14:01:53.067Z",
+            "sortNum": 35000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "b9997643-3280-4f05-8b45-6fb4bc8b4064",
+            "colId": "f60bb698-3f80-46e6-86df-b26e8c5792a6",
+            "containerId": "65289ccc-0e7a-4d75-a6b3-9b64e2ca9da2",
+            "name": "GetUser",
+            "url": "http://localhost:8080/api/users/current",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-02-01T03:34:30.211Z",
+            "modified": "2024-02-01T04:45:06.248Z",
+            "headers": [
+                {
+                    "name": "Cookie",
+                    "value": "{{auth}}"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "234653f4-d827-4da1-9f19-973e5c78ffa0",
+            "colId": "f60bb698-3f80-46e6-86df-b26e8c5792a6",
+            "containerId": "9c097cd1-267b-4762-99d0-dca13865ac4f",
+            "name": "Login",
+            "url": "http://localhost:8080/api/sessions/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-01T03:34:41.793Z",
+            "modified": "2024-02-01T04:49:51.030Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "koko@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "654321"
+                    }
+                ]
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "header.set-cookie",
+                    "action": "setto",
+                    "value": "{{auth}}"
+                }
+            ]
+        },
+        {
+            "_id": "92829dfc-aa27-4ddf-950d-934443607b99",
+            "colId": "f60bb698-3f80-46e6-86df-b26e8c5792a6",
+            "containerId": "9c097cd1-267b-4762-99d0-dca13865ac4f",
+            "name": "Logout",
+            "url": "http://localhost:8080/api/sessions/logout",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2024-02-01T04:41:06.625Z",
+            "modified": "2024-02-01T04:51:30.843Z",
+            "headers": [
+                {
+                    "name": "Cookie",
+                    "value": "{{auth}}"
+                }
+            ],
+            "params": [],
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "header.set-cookie",
+                    "action": "setto",
+                    "value": "{{auth}}"
+                }
+            ]
+        },
+        {
+            "_id": "8e0fd0e3-b894-4c3a-8999-f09e8a14a097",
+            "colId": "f60bb698-3f80-46e6-86df-b26e8c5792a6",
+            "containerId": "65289ccc-0e7a-4d75-a6b3-9b64e2ca9da2",
+            "name": "GetUserPopulate",
+            "url": "http://localhost:8080/api/users/current:true",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-01T04:52:11.596Z",
+            "modified": "2024-02-01T05:01:17.847Z",
+            "headers": [
+                {
+                    "name": "Cookie",
+                    "value": "{{auth}}"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2d8469a4-f6c5-4d49-8863-976a34ccbf97",
+            "colId": "f60bb698-3f80-46e6-86df-b26e8c5792a6",
+            "containerId": "65289ccc-0e7a-4d75-a6b3-9b64e2ca9da2",
+            "name": "UpdateUserPwd",
+            "url": "http://localhost:8080/api/users/current",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-02-01T04:34:05.293Z",
+            "modified": "2024-02-01T04:39:59.967Z",
+            "headers": [
+                {
+                    "name": "Cookie",
+                    "value": "{{auth}}"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "password",
+                        "value": "654321"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "6dc25a15-9ca1-4c2f-af15-8a025d81a36d",
+            "colId": "f60bb698-3f80-46e6-86df-b26e8c5792a6",
+            "containerId": "1ec9d6a9-2ca6-4280-b5e2-c58e0929f5df",
+            "name": "Add Cart",
+            "url": "http://localhost:8080/api/carts/",
+            "method": "POST",
+            "sortNum": 35000,
+            "created": "2024-02-01T14:01:53.071Z",
+            "modified": "2024-02-01T14:08:26.631Z",
+            "headers": [
+                {
+                    "name": "Cookie",
+                    "value": "{{auth}}"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "500f182c-4191-4062-a7b5-b06b67d66a51",
+            "colId": "f60bb698-3f80-46e6-86df-b26e8c5792a6",
+            "containerId": "bb4b484e-84b3-4704-bef1-29cdca7d6d0e",
+            "name": "getProduct",
+            "url": "http://localhost:8080/api/products/4fa34075-2681-4b37-8f44-acad6ae5c46e",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-02-01T12:58:07.688Z",
+            "modified": "2024-02-01T13:03:01.274Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "db173458-1146-4b55-838a-b4eca5d8b876",
+            "colId": "f60bb698-3f80-46e6-86df-b26e8c5792a6",
+            "containerId": "1ec9d6a9-2ca6-4280-b5e2-c58e0929f5df",
+            "name": "Get Cart by id",
+            "url": "http://localhost:8080/api/carts/e5aa512e-268a-4f28-8f42-0bb0d9a18090",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-02-01T14:01:53.071Z",
+            "modified": "2024-02-01T14:08:44.310Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0f47b4f2-fa42-4a21-a875-1957064e95d3",
+            "colId": "f60bb698-3f80-46e6-86df-b26e8c5792a6",
+            "containerId": "bb4b484e-84b3-4704-bef1-29cdca7d6d0e",
+            "name": "Add product",
+            "url": "http://localhost:8080/api/products/",
+            "method": "POST",
+            "sortNum": 75000,
+            "created": "2024-02-01T13:19:21.201Z",
+            "modified": "2024-02-01T13:30:16.018Z",
+            "headers": [
+                {
+                    "name": "Cookie",
+                    "value": "{{auth}}"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "Le monde"
+                    },
+                    {
+                        "name": "attribute",
+                        "value": "Paperback"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Except trouble is never far away where the Thursday Murder Club is concerned."
+                    },
+                    {
+                        "name": "brand",
+                        "value": "Richard Osman"
+                    },
+                    {
+                        "name": "avgRating",
+                        "value": "3.3"
+                    },
+                    {
+                        "name": "ratings",
+                        "value": "29933"
+                    },
+                    {
+                        "name": "price",
+                        "value": "10.00"
+                    },
+                    {
+                        "name": "oldPrice",
+                        "value": "20.00"
+                    },
+                    {
+                        "name": "stock",
+                        "value": "10"
+                    },
+                    {
+                        "name": "code",
+                        "value": "BRICE"
+                    },
+                    {
+                        "name": "category",
+                        "value": "Book"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "thumbnail",
+                        "value": "c:\\Users\\korid\\Downloads\\11_lists._CB654640573_.png"
+                    },
+                    {
+                        "name": "thumbnail",
+                        "value": "c:\\Users\\korid\\Downloads\\account._CB660668669_.png"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "401f1dd3-0c3e-46e5-abf6-340d1d824882",
+            "colId": "f60bb698-3f80-46e6-86df-b26e8c5792a6",
+            "containerId": "bb4b484e-84b3-4704-bef1-29cdca7d6d0e",
+            "name": "Update Product",
+            "url": "http://localhost:8080/api/products/0c64d30b-5c10-41e0-a1fb-051f2dc325e1",
+            "method": "PUT",
+            "sortNum": 85000,
+            "created": "2024-02-01T13:35:03.539Z",
+            "modified": "2024-02-01T13:36:23.572Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n      \"id\":2,\n      \"title\": \"Water Sampling Kit TDS updated 2\",\n      \"price\": 159.99\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "aadc29ca-ca31-4e88-95aa-f68575a25906",
+            "colId": "f60bb698-3f80-46e6-86df-b26e8c5792a6",
+            "containerId": "bb4b484e-84b3-4704-bef1-29cdca7d6d0e",
+            "name": "Delete Product",
+            "url": "http://localhost:8080/api/products/0c64d30b-5c10-41e0-a1fb-051f2dc325",
+            "method": "DELETE",
+            "sortNum": 95000,
+            "created": "2024-02-01T13:35:10.047Z",
+            "modified": "2024-02-01T13:45:02.546Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5ade457c-f0c2-4a4e-837e-43e3e25bd8f0",
+            "colId": "f60bb698-3f80-46e6-86df-b26e8c5792a6",
+            "containerId": "1ec9d6a9-2ca6-4280-b5e2-c58e0929f5df",
+            "name": "Add product to cart",
+            "url": "http://localhost:8080/api/carts/e5aa512e-268a-4f28-8f42-0bb0d9a18090/product/4fa34075-2681-4b37-8f44-acad6ae5c46e",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2024-02-01T14:01:53.071Z",
+            "modified": "2024-02-01T14:24:43.519Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"quantity\":10\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a2574f45-c7c5-4dfd-8261-d608ecb11556",
+            "colId": "f60bb698-3f80-46e6-86df-b26e8c5792a6",
+            "containerId": "bb4b484e-84b3-4704-bef1-29cdca7d6d0e",
+            "name": "Update product pictures",
+            "url": "http://localhost:8080/api/products/c90f3627-e5bd-4240-959a-342618d63a6b/thumbnailUrl",
+            "method": "PUT",
+            "sortNum": 105000,
+            "created": "2024-02-01T13:35:15.972Z",
+            "modified": "2024-02-01T14:00:27.241Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [],
+                "files": [
+                    {
+                        "name": "thumbnail",
+                        "value": "c:\\Users\\korid\\Downloads\\ideogram (1).jpeg"
+                    },
+                    {
+                        "name": "thumbnail",
+                        "value": "c:\\Users\\korid\\Downloads\\ideogram.jpeg"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "ac730118-a752-4166-a25c-0fc126d5e491",
+            "colId": "f60bb698-3f80-46e6-86df-b26e8c5792a6",
+            "containerId": "1ec9d6a9-2ca6-4280-b5e2-c58e0929f5df",
+            "name": "Update cart with new products",
+            "url": "http://localhost:8080/api/carts/e5aa512e-268a-4f28-8f42-0bb0d9a18090",
+            "method": "PUT",
+            "sortNum": 120000,
+            "created": "2024-02-01T14:01:53.071Z",
+            "modified": "2024-02-01T14:28:26.396Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "[\n    {\n      \"product\": \"d0f45564-700a-42b3-bdcf-5422fff7b029\",\n      \"quantity\": 5\n    },\n    {\n      \"product\": \"a861fce7-12b6-470b-b46d-c107ae730693\",\n      \"quantity\": 240\n    }\n]",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "347ceefb-2d3f-4939-afba-ad1b5eba95d3",
+            "colId": "f60bb698-3f80-46e6-86df-b26e8c5792a6",
+            "containerId": "1ec9d6a9-2ca6-4280-b5e2-c58e0929f5df",
+            "name": "Delete product from cart",
+            "url": "http://localhost:8080/api/carts/e5aa512e-268a-4f28-8f42-0bb0d9a18090/product/4fa34075-2681-4b37-8f44-acad6ae5c46e",
+            "method": "DELETE",
+            "sortNum": 125000,
+            "created": "2024-02-01T14:01:53.071Z",
+            "modified": "2024-02-01T14:26:02.675Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3de6f642-732a-45d2-877d-beb4ce67dddb",
+            "colId": "f60bb698-3f80-46e6-86df-b26e8c5792a6",
+            "containerId": "1ec9d6a9-2ca6-4280-b5e2-c58e0929f5df",
+            "name": "Delete all products from cart",
+            "url": "http://localhost:8080/api/carts/e5aa512e-268a-4f28-8f42-0bb0d9a18090",
+            "method": "DELETE",
+            "sortNum": 140000,
+            "created": "2024-02-01T14:01:53.071Z",
+            "modified": "2024-02-01T14:29:06.713Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
