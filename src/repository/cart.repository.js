@@ -7,7 +7,7 @@ class CartRepository extends GenericRepository {
   }
 
   // Add any user-specific methods here, if needed
-  findOnePopulated(criteria) {
+  async findOnePopulated(criteria) {
     return this.dao.readOnePopulated(criteria, "products.product");
   }
 }

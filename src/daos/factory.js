@@ -19,12 +19,12 @@ switch (PERSISTENCE) {
     const { CartDaoMongoose } = await import("./mongoose/cart.dao.js");
     const { ProductDaoMongoose } = await import("./mongoose/product.dao.js");
     // const { PurchaseDaoMongoose } = await import("./mongoose/purchase.dao.js");
-    // const { TicketDaoMongoose } = await import("./mongoose/ticket.dao.js");
+    const { TicketDaoMongoose } = await import("./mongoose/ticket.dao.js");
     userDaoFactory = UserDaoMongoose;
     cartDaoFactory = CartDaoMongoose;
     productDaoFactory = ProductDaoMongoose;
     // purchaseDaoFactory = PurchaseDaoMongoose;
-    // ticketDaoFactory = TicketDaoMongoose;
+    ticketDaoFactory = TicketDaoMongoose;
     break;
   case "MEMORY":
     break;

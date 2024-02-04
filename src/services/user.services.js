@@ -12,6 +12,11 @@ export class UserServices {
     return user;
   }
 
+  async findOneEmail(email) {
+    const user = await this.usersRepository.findOne({ email: email });
+    return user;
+  }
+
   async findOnePopulate(id) {
     const user = await this.usersRepository.findOnePopulated({ _id: id });
     return user;

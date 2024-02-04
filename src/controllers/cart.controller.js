@@ -63,3 +63,13 @@ export async function clearCart(req, res, next) {
     next(error); // Pass any errors to the error handling middleware
   }
 }
+
+export async function purchaseItemsCart(req, res, next) {
+  try {
+    const cid = req.params.cid;
+    const purchasedProducts = await cartServices.purchaseItemsCart(cid);
+    res["successfullGet"](purchasedProducts);
+  } catch (error) {
+    next(error); // Pass any errors to the error handling middleware
+  }
+}

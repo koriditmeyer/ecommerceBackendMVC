@@ -1,8 +1,12 @@
 import passport from "passport";
 import { ExtractJwt, Strategy as JwtStrategy } from "passport-jwt";
 import { encrypt } from "../utils/crypto.js";
-import { JWT_COOKIE_NAME, JWT_COOKIE_OPTS, JWT_PRIVATE_KEY } from "../config/config.js";
-import {  AuthenticationServerError } from "../models/errors/authentication.error.js";
+import {
+  JWT_COOKIE_NAME,
+  JWT_COOKIE_OPTS,
+  JWT_PRIVATE_KEY,
+} from "../config/config.js";
+import { AuthenticationServerError } from "../models/errors/authentication.error.js";
 
 /**
  *
@@ -12,9 +16,9 @@ import {  AuthenticationServerError } from "../models/errors/authentication.erro
 //create cookie
 export async function appendJwtAsCookie(req, res, next) {
   try {
-    console.log(`Try to set cookie with ${req.user}`)
-    console.log(req.user)
-    let accessToken
+    console.log(`Try to set cookie with ${req.user}`);
+    console.log(req.user);
+    let accessToken;
     try {
       accessToken = await encrypt(req.user);
     } catch (error) {
@@ -40,7 +44,6 @@ export async function removeJwtFromCookies(req, res, next) {
   }
   next();
 }
-
 
 /**
  *
@@ -68,8 +71,8 @@ passport.use(
         console.log("Registered User Data:", userData);
         done(null, userData); // method of passport done(null, userData)= (no error, return userData)
       } catch (error) {
-          console.error("Registration Error:", error.message);
-          done(error); // method of passport done(null, false, error.message)= (error, don't return userData, return error)
+        console.error("Registration Error:", error.message);
+        done(error); // method of passport done(null, false, error.message)= (error, don't return userData, return error)
       }
     }
   )
@@ -82,12 +85,12 @@ passport.use(
     {
       usernameField: "email",
     },
-    async (email, password,done) => {
+    async (email, password, done) => {
       try {
-        const userData = await sessionsServices.login({email, password});
+        const userData = await sessionsServices.login({ email, password });
         done(null, userData);
       } catch (error) {
-        done(error)
+        done(error);
       }
     }
   )
@@ -108,7 +111,7 @@ export function clearSession(req, res, next) {
       }
     });
   } else {
-    console.log("no session to destroy")
+    console.log("no session to destroy");
     next(); // No session to destroy, proceed to next middleware
   }
 }
@@ -133,6 +136,55 @@ passport.use(
     function loginUser(user, done) {
       console.log("User loaded in JWT Strategy:", user); // Log the user object
       done(null, user);
+    }
+  )
+);
+
+// Passport Github Strategy for Registering Users
+import { Strategy as GithubStrategy } from "passport-github2";
+import {
+  githubCallbackUrl,
+  githubClientSecret,
+  githubClienteId,
+} from "../config/config.js";
+import { userServices } from "../services/user.services.js";
+
+passport.use(
+  "github",
+  // @ts-ignore
+  new GithubStrategy(
+    {
+      clientID: githubClienteId,
+      clientSecret: githubClientSecret,
+      callbackURL: githubCallbackUrl,
+      scope: ["user:email"],
+    },
+    async function verify(accessToken, refreshToken, profile, done) {
+      // console.log(profile);
+      try {
+        // search first if user exist in DB
+        let user = await userServices.findOneEmail(profile.emails[0].value);
+        if (!user) {
+          let userEmail = profile.username; // Default to username
+          if (profile.emails && profile.emails.length > 0) {
+            userEmail = profile.emails[0].value; // Use email if available
+          }
+          const userDB = {
+            email: userEmail,
+            password: "NA",
+            name: profile.displayName || profile.username || "NA",
+            last_name: "NA",
+            provider: profile.provider,
+            providerId: profile.id, // Storing GitHub ID
+            profilePhoto: profile.photos[0].value || "",
+          };
+          // Create a new user if not exists
+          user = await sessionsServices.register(userDB, false);
+        }
+        return done(null, user);
+      } catch (error) {
+        done(error);
+      }
     }
   )
 );

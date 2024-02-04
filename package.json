@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "ecommercebackendMVC",
+  "name": "ecommerce_backend_mvc",
   "version": "1.0.0",
   "description": "E-commerce Backend with Express and MVC layers",
   "main": "src/main.js",

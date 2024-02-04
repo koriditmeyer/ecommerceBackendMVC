@@ -8,8 +8,7 @@ export class UserRepository extends GenericRepository {
     }
 
     // Add any user-specific methods here, if needed
-    findOnePopulated(criteria) {
-        console.log("hi")
+    async findOnePopulated(criteria) {
         return this.dao.readOnePopulated(criteria, "cartId");
     }
 }

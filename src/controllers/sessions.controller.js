@@ -31,6 +31,22 @@ export const logoutUser = [
   },
 ];
 
+export const loginUserGitHub = [
+  authenticateOAuth("github"),
+  async (req, res, next) => {
+    res["successfullPost"](req.user);
+  },
+]
+
+export const callbackUserGitHub = [
+  authenticateOAuth("github"),
+  appendJwtAsCookie,
+  async (req, res, next) => {
+    res["successfullPost"](req.user);
+  },
+];
+
+// Functions ----------------------
 export function authenticate(method) {
   return (req, res, next) => {
     passport.authenticate(method, {
@@ -39,6 +55,13 @@ export function authenticate(method) {
     })(req, res, next);
   };
 }
+
+export function authenticateOAuth(method) {
+  return (req, res, next) => {
+    passport.authenticate(method,{ scope: ["user:email"] })(req, res, next);
+  };
+}
+
 
 
 

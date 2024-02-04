@@ -1,10 +1,19 @@
 import { cartRepository } from "../repository/cart.repository.js";
 import { productsRepository } from "../repository/products.repository.js";
+import { ticketRepository } from "../repository/ticket.repository.js";
+import { usersRepository } from "../repository/user.repository.js";
 
 export class CartServices {
-  constructor(cartRepository, productsRepository) {
+  constructor(
+    cartRepository,
+    productsRepository,
+    ticketRepository,
+    usersRepository
+  ) {
     this.cartRepository = cartRepository;
     this.productsRepository = productsRepository;
+    this.ticketRepository = ticketRepository;
+    this.usersRepository = usersRepository;
   }
   async create() {
     const emptyCart = [{}];
@@ -44,8 +53,10 @@ export class CartServices {
     // Check if product exist in cart
     await cart.products.find((item) => item.product === pid);
     // Delete product
-    const deleted = await this.cartRepository
-      .updateOne({ _id: cid }, { $pull: { products: { product: pid } } })
+    const deleted = await this.cartRepository.updateOne(
+      { _id: cid },
+      { $pull: { products: { product: pid } } }
+    );
     return deleted;
   }
 
@@ -76,6 +87,75 @@ export class CartServices {
     );
     return deleted;
   }
+
+  async purchaseItemsCart(cid) {
+    let ticketData = [];
+    let RemainingCartData = [];
+    // Check if cart exist
+    let cart = await this.cartRepository.findOne({ _id: cid });
+    // Check if the cart is not empty
+    if (!cart.products.length) {
+      throw new Error(`Cart is empty`);
+    }
+    // For each product in cart
+    for (const item of cart.products) {
+      // Check the stock of products
+      let product = await this.productsRepository.findOne({
+        _id: item.product,
+      });
+      const productDTO = {
+        product: item.product,
+        quantity: item.quantity,
+        price: product.price,
+      };
+      //if product dont have enough stock then can not be added to the ticket
+      if (item.quantity > product.stock) {
+        // add products
+        RemainingCartData.push(productDTO);
+        continue; // Skip the rest of the loop body for this iteration
+      }
+      //if product has enough stock
+      // add it to the ticket data
+      ticketData.push(productDTO);
+      // rest purchase quantity from stock
+      const newQuantity = product.stock - item.quantity;
+      await this.productsRepository.updateOne(
+        {
+          _id: item.product,
+        },
+        { $set: { stock: newQuantity } }
+      );
+      // delete it from cart
+      await this.cartRepository.updateOne(
+        { _id: cid },
+        { $pull: { ["products"]: { product: item.product } } }
+      );
+      console.log(ticketData);
+      console.log(RemainingCartData);
+    }
+    // fill ticket with Data
+    const user = await this.usersRepository.findOne({
+      cartId: cid,
+    });
+    const amount = ticketData.reduce(
+      (sum, item) => sum + item.quantity * item.price,
+      0
+    );
+    const ticketDTO = {
+      amount: amount,
+      purchaser: user._id,
+      products: ticketData,
+    };
+    console.log(ticketDTO);
+    // create ticket
+    const ticket = await this.ticketRepository.create(ticketDTO);
+    return ticket;
+  }
 }
 
-export const cartServices = new CartServices(cartRepository,productsRepository);
+export const cartServices = new CartServices(
+  cartRepository,
+  productsRepository,
+  ticketRepository,
+  usersRepository
+);

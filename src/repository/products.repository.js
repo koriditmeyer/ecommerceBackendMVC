@@ -7,7 +7,7 @@ export class ProductsRepository extends GenericRepository {
   }
 
   // Add any user-specific methods here, if needed
-  paginate(aggregateQuery, options) {
+  async paginate(aggregateQuery, options) {
     return this.dao.paginate(aggregateQuery, options) ;
   }
 }
