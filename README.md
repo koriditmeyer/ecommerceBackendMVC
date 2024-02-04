@@ -39,9 +39,13 @@ None
 ![GitHub](https://img.shields.io/badge/github-GitHub-brightgreen?logo=github&logoColor=white&label=%20&labelColor=black&color=181717)
 
 ## 💼 Technical Elements
+05/02/24 [V1.0]:
+- [NEW] Add the purchase cart route and corresponding services. 
+- [NEW] Add the ticket model and corresponding routes and services.
+- [NEW] Add a mailing services when finishing the purchase
 
 31/01/24 [V1.0]:
-- [NEW] Transformation of the app to be able to be scalable with the use of design patterns and SOLID principles. Implementation of the Model, View, Controller (MVC):
+- Transformation of the app to be able to be scalable with the use of design patterns and SOLID principles. Implementation of the Model, View, Controller (MVC):
     * Controller: Implementation in several layers:
         * Controller - Handles incoming requests and delegates business logic operations to the Services layer
         * Services - Contains the core business logic, ensuring controllers remain lean 
@@ -55,8 +59,8 @@ None
      * Routing with express
      * Error models
 
-- [NEW] Add a .ENV file
-- [NEW] Begin to add some testing with the use of Faker
+- Add a .ENV file
+- Begin to add some testing with the use of Faker
 
 08/01/24 [V0.4]:
 - Update endpoints to integrate a success handler and an error handler. 
