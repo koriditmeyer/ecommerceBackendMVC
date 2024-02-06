@@ -9,10 +9,12 @@ import {
 } from "../../controllers/products.controller.js";
 import { allowedRolesCookie } from "../../middlewares/authorization.js";
 import { authenticate } from "../../controllers/sessions.controller.js";
+import compression from 'express-compression'
 
 export const productsRouter = Router();
 
-productsRouter.get("/", getProductQuery);
+// @ts-ignore
+productsRouter.get("/",compression({ brotli: { enabled: true, zlib: {} } }), getProductQuery);
 productsRouter.get("/:pid", getProduct);
 productsRouter.post(
   "/",
