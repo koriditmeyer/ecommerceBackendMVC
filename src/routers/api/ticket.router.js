@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { allowedRoles } from "../../middlewares/authorization.js";
+import { allowedRolesCookie } from "../../middlewares/authorization.js";
 import { authenticate } from "../../controllers/sessions.controller.js";
 import {
   getTicket,
@@ -12,13 +12,13 @@ export const ticketRouter = Router();
 ticketRouter.get(
   "/user/:id",
   authenticate("jwt"),
-  allowedRoles(["user", "admin"]),
+  allowedRolesCookie(["user", "admin"]),
   getUserTickets
 );
 
 ticketRouter.get(
   "/:tid",
   authenticate("jwt"),
-  allowedRoles(["user", "admin"]),
+  allowedRolesCookie(["user", "admin"]),
   getTicket
 );

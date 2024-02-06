@@ -3,11 +3,11 @@ import { TWILIO_SMS_NUMBER } from '../../config/config.js'
 
 class SmsServiceTwilio {
 
-  async send(destinatario, mensaje) {
+  async send(destinatary, message) {
     const smsOptions = {
       from: TWILIO_SMS_NUMBER,
-      to: destinatario,
-      body: mensaje
+      to: destinatary,
+      body: message
     }
 
     console.log(smsOptions)

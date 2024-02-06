@@ -71,7 +71,6 @@ export class mongooseDao {
       .populate(foreignModel)
       .select({ _id: 0 })
       .lean();
-
     if (!result) throw new Error("NOT FOUND");
     return result;
   }

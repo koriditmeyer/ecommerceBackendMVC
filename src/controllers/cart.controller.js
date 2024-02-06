@@ -1,6 +1,3 @@
-import { productsServices } from "../services/products.services.js";
-import { extractFile } from "../middlewares/multer.js";
-import { maxPicUpload } from "../config/config.js";
 import { cartServices } from "../services/cart.services.js";
 
 export async function createCart(req, res, next) {
@@ -73,3 +70,4 @@ export async function purchaseItemsCart(req, res, next) {
     next(error); // Pass any errors to the error handling middleware
   }
 }
+

@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <title>Message HTML Title</title>
+</head>
+
+<body>
+  <div>
+    <span style="font-weight: bold;">Here is your purchase order: </span>
+    <span>{{#each this.message.products}}
+      <div class="">
+        <div class="">
+          <img alt="Product Image" class=" " src="{{this.product.thumbnail.[0]}}">
+        </div>
+        <div class="">
+          <h2 class="color:red">{{this.product.title}}</h2>
+          <span class="">{{this.product.code}}</span>
+          <p class="">{{this.product.description}}</p>
+          <p class="">Quantity {{this.quantity}}
+            <p />
+          <p class="">Price ${{this.price}}
+            <p />
+        </div>
+      </div>
+      {{/each}}
+    </span>
+    <p class="">Total Price ($) {{this.message.amount}}
+      <p />
+    <p class="">Date of purchase: {{this.message.purchase_datetime}}
+      <p />
+
+  </div>
+</body>
+
+</html>

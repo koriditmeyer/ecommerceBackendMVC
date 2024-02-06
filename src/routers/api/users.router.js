@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { authenticate } from "../../controllers/sessions.controller.js";
-import { allowedRoles } from "../../middlewares/authorization.js";
+import { allowedRolesCookie } from "../../middlewares/authorization.js";
 import {
   findUser,
   findUsers,
@@ -12,18 +12,18 @@ export const usersRouter = Router();
 usersRouter.get(
   "/current:populate",
   authenticate("jwt"),
-  allowedRoles(["user", "admin"]),
+  allowedRolesCookie(["user", "admin"]),
   findUser
 );
 usersRouter.put(
   "/current",
   authenticate("jwt"),
-  allowedRoles(["user", "admin"]),
+  allowedRolesCookie(["user", "admin"]),
   resetPwdUser
 );
 usersRouter.get(
   "/:id",
   authenticate("jwt"),
-  allowedRoles(["admin"]),
+  allowedRolesCookie(["admin"]),
   findUsers
 );

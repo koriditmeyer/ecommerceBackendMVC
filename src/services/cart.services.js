@@ -2,6 +2,8 @@ import { cartRepository } from "../repository/cart.repository.js";
 import { productsRepository } from "../repository/products.repository.js";
 import { ticketRepository } from "../repository/ticket.repository.js";
 import { usersRepository } from "../repository/user.repository.js";
+import {emailService} from "./email/email.service.js"
+import { ticketServices } from "./ticket.services.js";
 
 export class CartServices {
   constructor(
@@ -15,19 +17,21 @@ export class CartServices {
     this.ticketRepository = ticketRepository;
     this.usersRepository = usersRepository;
   }
+
+  
   async create() {
     const emptyCart = [{}];
     const addedProduct = await this.cartRepository.create(emptyCart);
     return addedProduct;
   }
-  async findOne(id) {
-    const cart = await this.cartRepository.findOnePopulated({ _id: id });
+  async findOne(cid) {
+    const cart = await this.cartRepository.findOnePopulated({ _id: cid });
     return cart;
   }
   async addToCart(cid, pid, quantity) {
     // check if productId exist
     await this.productsRepository.findOne({ _id: pid });
-    // Check if cart exist and product
+    // Check if cart exist 
     let cart = await this.cartRepository.findOne({ _id: cid });
     // Check if product exist in cart
     const item = await cart.products.find((item) => item.product === pid);
@@ -87,6 +91,8 @@ export class CartServices {
     );
     return deleted;
   }
+
+
 
   async purchaseItemsCart(cid) {
     let ticketData = [];
@@ -149,6 +155,8 @@ export class CartServices {
     console.log(ticketDTO);
     // create ticket
     const ticket = await this.ticketRepository.create(ticketDTO);
+    //send email with ticket data
+    await ticketServices.sendTicketEmail(ticket._id)
     return ticket;
   }
 }

@@ -7,6 +7,13 @@ export class UserServices {
     this.usersRepository = usersRepository;
   }
 
+  async verifyUserCart(cid,id) {
+    const addedProduct = await this.usersRepository.findOne(
+      {$and:[{_id:id},{cartId:cid}]}
+    );
+    return addedProduct;
+  }
+
   async findOne(id) {
     const user = await this.usersRepository.findOne({ _id: id });
     return user;

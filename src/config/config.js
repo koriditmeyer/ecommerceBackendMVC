@@ -49,7 +49,7 @@ export const githubCallbackUrl = process.env.GITHUBCALLBACKURL;
 export const maxPicUpload = 10;
 
 //SERVICES TESTING
-export const MODE = 'dev'
+export const MODE = 'prod'
 
 //NODE MAILER CONFIG
 export const EMAIL_USER = process.env.EMAIL_USER

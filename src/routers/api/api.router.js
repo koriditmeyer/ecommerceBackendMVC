@@ -7,6 +7,7 @@ import { productsRouter } from "./products.router.js";
 import { cartRouter } from "./cart.router.js";
 import { chatRouter } from "./chat.router.js";
 import { ticketRouter } from "./ticket.router.js";
+import { messageRouter } from "./messages.router.js";
 
 export const apiRouter = Router();
 
@@ -20,6 +21,7 @@ apiRouter.use("/sessions", sessionsRouter); // External middleware for sessions
 apiRouter.use("/users", usersRouter); // External middleware for users
 apiRouter.use("/tickets", ticketRouter);
 apiRouter.use("/chat", chatRouter);
+apiRouter.use("/messages", messageRouter);
 
 // middleware of error for all the errors in API
 apiRouter.use(handlerError);
