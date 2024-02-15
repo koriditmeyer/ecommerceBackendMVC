@@ -35,6 +35,7 @@ export async function allowCartmodification(req, res, next) {
     try {
       const cid = req.params.cid;
       const id = req.user._id;
+      console.log(cid,id)
       const cart = await userServices.verifyUserCart(cid, id);
       next();
     } catch (error) {

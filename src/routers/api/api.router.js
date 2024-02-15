@@ -8,6 +8,8 @@ import { cartRouter } from "./cart.router.js";
 import { chatRouter } from "./chat.router.js";
 import { ticketRouter } from "./ticket.router.js";
 import { messageRouter } from "./messages.router.js";
+import { logger } from "../../utils/logger/index.js";
+import {  testRouter } from "./test.router.js";
 
 export const apiRouter = Router();
 
@@ -22,6 +24,9 @@ apiRouter.use("/users", usersRouter); // External middleware for users
 apiRouter.use("/tickets", ticketRouter);
 apiRouter.use("/chat", chatRouter);
 apiRouter.use("/messages", messageRouter);
-
+// test router
+apiRouter.use("/test", testRouter);
 // middleware of error for all the errors in API
 apiRouter.use(handlerError);
+
+logger.info("Api router loaded")

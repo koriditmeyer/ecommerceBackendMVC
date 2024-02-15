@@ -10,6 +10,7 @@ import { cookies } from "../middlewares/cookies.js";
 import { sessions } from "../middlewares/sessions.js"; // import sessions midelware config
 import cors from "cors";
 import { CLIENT_ORIGIN } from "../config/config.js";
+import { loggerInRequest } from "../middlewares/logger.js";
 
 /*
  *
@@ -32,6 +33,8 @@ app.use(
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(loggerInRequest)
 
 app.use(cookies); //use cookieParser to create cookies with secret key - placed before the Passport middleware, as Passport might depend on cookies for authentication.
 app.use(sessions); // Session - External middleware to handle sessions (need to be before other middleware) or OAuth

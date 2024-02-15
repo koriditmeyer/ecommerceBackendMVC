@@ -10,6 +10,7 @@ import {
 } from "../../controllers/cart.controller.js";
 import { allowedRolesCookie,allowCartmodification, allowedRolesDB } from "../../middlewares/authorization.js";
 import { authenticate } from "../../controllers/sessions.controller.js";
+import tryCatch from "../../middlewares/trycatch.js"
 
 export const cartRouter = Router();
 
@@ -17,39 +18,39 @@ cartRouter.post(
   "/",
   authenticate("jwt"),
   allowedRolesCookie(["user"]),
-  createCart
+  tryCatch(createCart)
 );
 cartRouter.get(
   "/:cid",
   authenticate("jwt"),
-  allowedRolesCookie(["user"]),
-  getCart
+  allowedRolesCookie(["user","admin"]),
+  tryCatch(getCart)
 );
 cartRouter.post(
   "/:cid/product/:pid",
   authenticate("jwt"),
   allowedRolesCookie(["user","admin"]),
   allowCartmodification,
-  addToCart
+  tryCatch(addToCart)
 );
 cartRouter.put(
   "/:cid",
   authenticate("jwt"),
   allowedRolesCookie(["user"]),
-  updateCart
+  tryCatch(updateCart)
 );
 cartRouter.delete(
   "/:cid/product/:pid",
   authenticate("jwt"),
   allowedRolesCookie(["user","admin"]),
-  removeItemsCart
+  tryCatch(removeItemsCart)
 );
 
 cartRouter.delete(
   "/:cid",
   authenticate("jwt"),
   allowedRolesCookie(["user","admin"]),
-  clearCart
+  tryCatch(clearCart)
 );
 
 cartRouter.get(
@@ -57,5 +58,5 @@ cartRouter.get(
   authenticate("jwt"),
   allowedRolesDB(["user","admin"]),
   allowCartmodification,
-  purchaseItemsCart
+  tryCatch(purchaseItemsCart)
 );

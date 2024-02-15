@@ -4,6 +4,7 @@ import { htmlToText } from "../../utils/htmlToText.js";
 //Email Template
 import fs from "fs";
 import handlebars from "handlebars";
+import { logger } from "../../utils/logger/index.js";
 
 class GmailEmailService {
   constructor() {
@@ -18,7 +19,7 @@ class GmailEmailService {
   }
 
   async send(destinatary, object,templateName, message, attachments = []) {
-    
+    logger.debug(`[services] send method got destinatary ${destinatary}` )
     const emailTemplateSource = fs.readFileSync(
       `./views/${templateName}.handlebars`,
       "utf8"
@@ -26,7 +27,7 @@ class GmailEmailService {
     const template = handlebars.compile(emailTemplateSource);
     const htmlmessage = template({ message });
     const emailOptions = {
-      from: `KORI DIMEYER <${EMAIL_USER}>`,
+      from: `Amazon <${EMAIL_USER}>`,
       to: destinatary,
       subject: object,
       text: htmlToText(htmlmessage),
@@ -38,6 +39,8 @@ class GmailEmailService {
     }
 
     await this.transport.sendMail(emailOptions);
+    logger.info(`[services] send method return email sent` )
+
   }
 }
 

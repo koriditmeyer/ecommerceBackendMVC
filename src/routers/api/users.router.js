@@ -6,6 +6,7 @@ import {
   findUsers,
   resetPwdUser,
 } from "../../controllers/users.controller.js";
+import tryCatch from "../../middlewares/trycatch.js";
 
 export const usersRouter = Router();
 
@@ -13,17 +14,17 @@ usersRouter.get(
   "/current:populate",
   authenticate("jwt"),
   allowedRolesCookie(["user", "admin"]),
-  findUser
+  tryCatch(findUser)
 );
 usersRouter.put(
   "/current",
   authenticate("jwt"),
   allowedRolesCookie(["user", "admin"]),
-  resetPwdUser
+  tryCatch(resetPwdUser)
 );
 usersRouter.get(
   "/:id",
   authenticate("jwt"),
   allowedRolesCookie(["admin"]),
-  findUsers
+  tryCatch(findUsers)
 );

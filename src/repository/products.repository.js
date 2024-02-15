@@ -1,4 +1,7 @@
 import { productDaoFactory } from "../daos/factory.js";
+import { NotFoundError } from "../models/errors/notFound.error.js";
+import { logger } from "../utils/logger/index.js";
+import { objectToString } from "../utils/objectToString.js";
 import { GenericRepository } from "./genericRepository.js";
 
 export class ProductsRepository extends GenericRepository {
@@ -8,7 +11,15 @@ export class ProductsRepository extends GenericRepository {
 
   // Add any user-specific methods here, if needed
   async paginate(aggregateQuery, options) {
-    return this.dao.paginate(aggregateQuery, options) ;
+    logger.debug(
+      `[Repository] - paginate method with criteria ${objectToString(aggregateQuery)}`
+    );
+    const result = await this.dao.paginate(aggregateQuery, options) ;
+    if (!result) throw new NotFoundError();
+    logger.info(
+      `[Repository] - paginate method with result ${objectToString(result)}`
+    );
+    return result
   }
 }
 

@@ -1,0 +1,37 @@
+config:
+  plugins:
+    metrics-by-endpoint: {}
+  target: 'http://localhost:8080'
+  phases:
+    - duration: 20 #at 20s of interval
+      arrivalRate: 10 #generate 10 users
+scenarios:
+  - name: "Sessions Flow (register + login)"
+    flow:
+      - log: "Creating variables for user" # Vamos a dar una 
+      - get:
+          url: '/api/test/user'
+          capture:
+            - json: "$.payload.name"
+              as: "name"
+            - json: "$.payload.last_name"
+              as: "last_name"
+            - json: "$.payload.email"
+              as: "email"
+            - json: "$.payload.password"
+              as: "password"
+      - log: "Registering user"
+      - post:
+          url: "/api/sessions/register"
+          json: #Vamos a recibir las variables de nuestro script generador de usuarios
+            name: "{{ name }}"
+            last_name: "{{ last_name }}"
+            email: "{{ email }}"
+            password: "{{ password }}"
+      - think: 2  # simulation that user wait 2 s between register and login
+      - log: "Login user"
+      - post:
+          url: "/api/sessions/login"
+          json:
+            email: "{{ email }}"
+            password: "{{ password }}"

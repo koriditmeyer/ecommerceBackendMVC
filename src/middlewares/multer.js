@@ -1,4 +1,5 @@
 import multer from "multer"; // import external middleware
+import { logger } from "../utils/logger/index.js";
 
 // MULTER CONFIG
 const storage = multer.diskStorage({
@@ -7,7 +8,7 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    console.log("multer")
+    logger.debug("Storing file using multer")
     cb(null, uniqueSuffix + "-" + file.originalname);
   },
 });

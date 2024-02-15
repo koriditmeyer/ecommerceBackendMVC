@@ -16,15 +16,16 @@ import { AuthenticationServerError } from "../models/errors/authentication.error
 //create cookie
 export async function appendJwtAsCookie(req, res, next) {
   try {
-    console.log(`Try to set cookie with ${req.user}`);
-    console.log(req.user);
+    req.logger.debug(
+      `[Authentication] Try to set cookie with ${objectToString(req.user)}`
+    );
     let accessToken;
     try {
       accessToken = await encrypt(req.user);
     } catch (error) {
       throw new AuthenticationServerError();
     }
-    console.log("Setting JWT in cookie:", accessToken); // Log the JWT being set
+    req.logger.info(`[Authentication] Setting JWT in cookie: ${accessToken}`); // Log the JWT being set
     res.cookie(JWT_COOKIE_NAME, accessToken, JWT_COOKIE_OPTS);
     next();
   } catch (error) {
@@ -34,13 +35,13 @@ export async function appendJwtAsCookie(req, res, next) {
 
 //delete cookie
 export async function removeJwtFromCookies(req, res, next) {
-  console.log("Attempting to clear JWT cookie"); // Log the action of clearing the cookie
+  req.logger.debug("[Authentication] Attempting to clear JWT cookie"); // Log the action of clearing the cookie
   // res.clearCookie("authorization", COOKIE_OPTS); // remove only the JWT from cookie
   if (req.cookies[JWT_COOKIE_NAME]) {
-    console.log("JWT cookie found, clearing it.");
+    req.logger.info("[Authentication] JWT cookie found, clearing it.");
     res.clearCookie(JWT_COOKIE_NAME); // Clear the cookie if it exists
   } else {
-    console.log("No JWT cookie found, nothing to clear.");
+    req.logger.warning("[Authentication] No JWT cookie found, nothing to clear.");
   }
   next();
 }
@@ -60,18 +61,19 @@ passport.use(
     {
       passReqToCallback: true, // Tells Passport to pass the entire request to the callback
       usernameField: "email", // Specifies that the email field will be used as the username
+      passwordField: "password", // Explicitly specify 'password' field
     },
     async (req, _u, _p, done) => {
       // Asynchronous callback function for the strategy
-      console.log("authentication");
       try {
-        // const createUserDto = new CreateUserDTO(req.body)
-        // console.log(createUserDto)
-        const userData = await sessionsServices.register(req.body, true); // Calls User model's register method with the request body
-        console.log("Registered User Data:", userData);
+        req.logger.debug("[Passport] local-register strategy");
+        const userData = await sessionsServices.register(req.body, "local"); // Calls User model's register method with the request body
+        req.logger.info(
+          "[Passport] local-register strategy returns User:",
+          userData
+        );
         done(null, userData); // method of passport done(null, userData)= (no error, return userData)
       } catch (error) {
-        console.error("Registration Error:", error.message);
         done(error); // method of passport done(null, false, error.message)= (error, don't return userData, return error)
       }
     }
@@ -85,12 +87,17 @@ passport.use(
     {
       usernameField: "email",
     },
-    async (email, password, done) => {
+    async ( email, password, done) => {
       try {
+        logger.debug("[Passport] local-login strategy");
         const userData = await sessionsServices.login({ email, password });
+        logger.info(
+          "[Passport] local-login strategy returns, logged-in User Data:",
+          userData
+        );
         done(null, userData);
       } catch (error) {
-        done(error);
+        done(error)
       }
     }
   )
@@ -102,16 +109,16 @@ export function clearSession(req, res, next) {
     req.session.destroy((err) => {
       if (err) {
         // Handle error case
-        console.error("Session destruction error:", err);
+        req.logger.error("[Authentication] Session destruction error:", err);
         next(err); // Pass the error to error handling middleware
       } else {
-        console.log("clearing cookie connect.sid");
+        req.logger.info("[Authentication] clearing cookie connect.sid");
         res.clearCookie("connect.sid"); // Clear the session cookie
         next(); // Proceed to the next middleware
       }
     });
   } else {
-    console.log("no session to destroy");
+    req.logger.error("[Authentication] no session to destroy");
     next(); // No session to destroy, proceed to next middleware
   }
 }
@@ -126,15 +133,18 @@ passport.use(
           let token = null;
           if (req?.signedCookies) {
             token = req.signedCookies[`${JWT_COOKIE_NAME}`];
-            console.log("Extracted Token:", token); // Log the extracted token
+            req.logger.info(
+              "[Passport] Enter Passport JWT, Extracted Token:",
+              token
+            ); // Log the extracted token
           }
           return token;
         },
       ]),
+      // @ts-ignore
       secretOrKey: JWT_PRIVATE_KEY,
     },
     function loginUser(user, done) {
-      console.log("User loaded in JWT Strategy:", user); // Log the user object
       done(null, user);
     }
   )
@@ -148,6 +158,8 @@ import {
   githubClienteId,
 } from "../config/config.js";
 import { userServices } from "../services/user.services.js";
+import { objectToString } from "../utils/objectToString.js";
+import { logger } from "../utils/logger/index.js";
 
 passport.use(
   "github",
@@ -159,12 +171,15 @@ passport.use(
       callbackURL: githubCallbackUrl,
       scope: ["user:email"],
     },
-    async function verify(accessToken, refreshToken, profile, done) {
-      // console.log(profile);
+    async ( accessToken, refreshToken, profile, done) => {
       try {
+        logger.debug(`[Passport] Github strategy`);
         // search first if user exist in DB
         let user = await userServices.findOneEmail(profile.emails[0].value);
         if (!user) {
+          logger.debug(
+            `[Passport] Github user doesn't exist , creating profile`
+          );
           let userEmail = profile.username; // Default to username
           if (profile.emails && profile.emails.length > 0) {
             userEmail = profile.emails[0].value; // Use email if available
@@ -179,8 +194,9 @@ passport.use(
             profilePhoto: profile.photos[0].value || "",
           };
           // Create a new user if not exists
-          user = await sessionsServices.register(userDB, false);
+          user = await sessionsServices.register(userDB, "github");
         }
+        logger.debug(`[Passport] Github strategy return ${user}`);
         return done(null, user);
       } catch (error) {
         done(error);
@@ -215,7 +231,7 @@ export function PassportAutenticacion(req, res, next) {
   passportInitialize(req, res, () => {
     // Middleware to initialize Passport
     passportSession(req, res, next); // Middleware to handle Passport sessions session or with OAuth
-    // console.log("Passport Initialised with session");
+    req.logger.debug("[Passport] Initialised with session");
     // next()
   });
 }

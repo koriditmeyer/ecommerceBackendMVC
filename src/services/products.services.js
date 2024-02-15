@@ -1,5 +1,6 @@
 import { IncorrectDataError } from "../models/errors/incorrectData.error.js";
 import { productsRepository } from "../repository/products.repository.js";
+import { logger } from "../utils/logger/index.js";
 
 export class ProductsServices {
   constructor(productsRepository) {
@@ -7,6 +8,7 @@ export class ProductsServices {
   }
 
   async getProductQuery(query) {
+    logger.debug(`[services] getProductQuery method got: query:${query}`);
     if (query.limit <= 0) {
       throw new Error(`The limit entered must be positive or null`);
     }
@@ -19,12 +21,17 @@ export class ProductsServices {
     if (query.searchTerm) {
       aggregateQuery.title = { $regex: new RegExp(query.searchTerm, "i") }; // 'i' for case-insensitive
     }
+    logger.debug(
+      `[services] getProductQuery - aggregate query:${aggregateQuery}`
+    );
+
     const options = {
       limit: query.limit || 10, // Default page size: 2
       page: query.page || 1, // Default to first page
       lean: true, // Return plain JavaScript objects
       sort: query.sort === "desc" ? { price: -1 } : { price: 1 }, // Sorting
     };
+    logger.debug(`[services] getProductQuery - options:${options}`);
 
     const result = await this.productsRepository.paginate(
       aggregateQuery,
@@ -45,25 +52,31 @@ export class ProductsServices {
       pagingCounter: result.pagingCounter,
       totalDocs: result.totalDocs,
     };
+    logger.info(`[services] getProductQuery method return user: ${context}`);
     return context;
   }
 
   async findOne(id) {
+    logger.debug(`[services] findOne method got: id:${id}`);
     const product = await this.productsRepository.findOne({ _id: id });
+    logger.info(`[services] findOne method return product: ${product}`);
     return product;
   }
 
   async create(files, productData) {
+    logger.debug(`[services] create method got: file:${files}, productData:${productData}`);
     if (files?.length) {
       console.log(files);
       productData.thumbnail = files.map((e) => e.path);
     }
     const addedProduct = await this.productsRepository.create(productData);
+    logger.info(`[services] create method return added product: ${addedProduct}`);
     return addedProduct;
   }
 
   async updateOne(id, updatedData) {
-    console.log(id, updatedData)
+    logger.debug(`[services] updateOne method got: id:${id}, updatedData:${updatedData}`);
+    console.log(id, updatedData);
     if (updatedData.thumbnail) {
       throw new Error("You can't modify picture URL with this endpoint");
     }
@@ -71,15 +84,19 @@ export class ProductsServices {
       { _id: id },
       { $set: updatedData }
     );
+    logger.info(`[services] updateOne method return updated product: ${updatedProduct}`);
     return updatedProduct;
   }
 
   async deleteProduct(id) {
+    logger.debug(`[services] deleteProduct method got: id:${id}`);
     const deletedProduct = await this.productsRepository.deleteOne({ _id: id });
+    logger.info(`[services] findOne method return deletd product: ${deletedProduct}`);
     return deletedProduct;
   }
 
   async updateImage(id, newImages) {
+    logger.debug(`[services] updateImage method got: id:${id}, newImages ${newImages}`);
     if (!newImages) {
       throw new Error(`You need to upload some images`);
     }
@@ -88,6 +105,7 @@ export class ProductsServices {
       { _id: id },
       { $set: newImages }
     );
+    logger.info(`[services] updateImage method return modified: ${modified}`);
     return modified;
   }
 }

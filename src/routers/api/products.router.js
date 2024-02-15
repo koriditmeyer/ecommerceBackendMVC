@@ -9,13 +9,19 @@ import {
 } from "../../controllers/products.controller.js";
 import { allowedRolesCookie } from "../../middlewares/authorization.js";
 import { authenticate } from "../../controllers/sessions.controller.js";
-import compression from 'express-compression'
+import compression from "express-compression";
+import tryCatch from "../../middlewares/trycatch.js";
 
 export const productsRouter = Router();
 
-// @ts-ignore
-productsRouter.get("/",compression({ brotli: { enabled: true, zlib: {} } }), getProductQuery);
-productsRouter.get("/:pid", getProduct);
+
+productsRouter.get(
+  "/",
+  // @ts-ignore
+  compression({ brotli: { enabled: true, zlib: {} } }),
+  tryCatch(getProductQuery)
+);
+productsRouter.get("/:pid", tryCatch(getProduct));
 productsRouter.post(
   "/",
   authenticate("jwt"),
@@ -26,13 +32,13 @@ productsRouter.put(
   "/:id",
   authenticate("jwt"),
   allowedRolesCookie(["admin"]),
-  modifyProduct
+  tryCatch(modifyProduct)
 );
 productsRouter.delete(
   "/:id",
   authenticate("jwt"),
   allowedRolesCookie(["admin"]),
-  deleteProduct
+  tryCatch(deleteProduct)
 );
 productsRouter.put(
   "/:pid/thumbnailUrl",

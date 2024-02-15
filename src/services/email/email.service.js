@@ -1,9 +1,9 @@
-import { MODE } from '../../config/config.js'
+import { NODE_ENV } from '../../config/config.js'
 
 let emailService
 
 // @ts-ignore
-if (MODE === 'prod') {
+if (NODE_ENV === 'production') {
   const { gmailEmailService } = await import('./email.service.gmail.js')
   emailService = gmailEmailService
 } else {

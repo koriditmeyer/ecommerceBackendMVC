@@ -10,8 +10,6 @@ import {
 
 export const sessionsRouter = Router();
 
-console.log("router");
-
 sessionsRouter.post("/register", ...registerUser);
 sessionsRouter.post("/login", ...loginUser);
 sessionsRouter.delete("/logout", ...logoutUser);

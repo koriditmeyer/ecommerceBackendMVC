@@ -1,7 +1,14 @@
 // @ts-nocheck
+import { cpus } from "node:os"
+
+// CPU QUANTITY
+export const NB_PROCS = cpus().length
 
 // SERVER
-export const PORT = parseInt(process.env.PORT);
+export const PORT = parseInt(process.env.PORT)
+
+//MODE
+export const NODE_ENV = process.env.NODE_ENV
 
 // CORS
 export const CLIENT_ORIGIN = "*"; //http://127.0.0.1:5500";
@@ -47,9 +54,6 @@ export const githubCallbackUrl = process.env.GITHUBCALLBACKURL;
 
 //MULTER MAX PIC UPLOAD
 export const maxPicUpload = 10;
-
-//SERVICES TESTING
-export const MODE = 'prod'
 
 //NODE MAILER CONFIG
 export const EMAIL_USER = process.env.EMAIL_USER

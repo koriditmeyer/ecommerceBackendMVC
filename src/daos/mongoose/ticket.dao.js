@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 import { mongooseDao } from "./mongoose.dao.js";
 import { newId } from "../../utils/id.js";
+import { logger } from "../../utils/logger/index.js";
+import { objectToString } from "../../utils/objectToString.js";
 
 const ticketSchema = new mongoose.Schema(
   {
@@ -29,13 +31,19 @@ export class TicketDao extends mongooseDao {
 
   // Add any user-specific methods here, if needed
   async readManyPopulated(criteria, foreignModel) {
+    logger.debug(
+      `[DAO] - readManyPopulated method with data ${objectToString(criteria)}`
+    );
     const result = await this.model
       .find(criteria)
       .populate(foreignModel)
       .select({ _id: 0 })
       .lean();
 
-    if (!result) throw new Error("NOT FOUND");
+    // if (!result) throw new Error("NOT FOUND");
+    logger.info(
+      `[DAO] - readManyPopulated method with result ${objectToString(result)}`
+    );
     return result;
   }
 }

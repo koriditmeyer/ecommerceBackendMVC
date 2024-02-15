@@ -10,39 +10,64 @@ Welcome to the E-Commerce Express Backend project.
 - Programming Language: 
 ![JavaScript](https://img.shields.io/badge/javascript-JavaScript-brightgreen?logo=javascript&logoColor=F7DF1E&label=%20&labelColor=black&color=F7DF1E)
 
-
+- Container: 
+![Docker](https://img.shields.io/badge/docker-docker-brightgreen?logo=docker&logoColor=2496ED&label=%20&labelColor=black&color=2496ED)
 
 - Server: 
 ![Node JS](https://img.shields.io/badge/nodedotjs-Node_Js-brightgreen?logo=nodedotjs&logoColor=339933&label=%20&labelColor=black&color=339933)
 ![Express](https://img.shields.io/badge/express-Express-brightgreen?logo=express&logoColor=000000&label=%20&labelColor=white&color=000000)
-![Socket.io](https://img.shields.io/badge/socketdotio-socket.io-brightgreen?logo=socketdotio&logoColor=010101&label=%20&labelColor=white&color=010101)
 ![Multer](https://img.shields.io/badge/Multer-Multer-brightgreen?logo=Multer&logoColor=010101&label=%20&labelColor=010101&color=010101)
 ![express-session](https://img.shields.io/badge/expresssession-express_session-brightgreen?logo=Multer&logoColor=010101&label=%20&labelColor=010101&color=010101)
 ![connect-mongo](https://img.shields.io/badge/connectmongo-connect_mongo-brightgreen?logo=Multer&logoColor=010101&label=%20&labelColor=010101&color=010101)
 ![bcrypt](https://img.shields.io/badge/bcrypt-bcrypt-brightgreen?logo=Multer&logoColor=010101&label=%20&labelColor=010101&color=010101)
-![bcrypt](https://img.shields.io/badge/passport-passport-brightgreen?logo=passport&logoColor=34E27A&label=%20&labelColor=010101&color=34E27A)
+![Passport](https://img.shields.io/badge/passport-passport-brightgreen?logo=passport&logoColor=34E27A&label=%20&labelColor=010101&color=34E27A)
+![Passport-Github](https://img.shields.io/badge/Passport_Github-Passport_Github-brightgreen?logo=Multer&logoColor=010101&label=%20&labelColor=010101&color=010101)
+<!-- ![Socket.io](https://img.shields.io/badge/socketdotio-socket.io-brightgreen?logo=socketdotio&logoColor=010101&label=%20&labelColor=white&color=010101) -->
+
 
 - Database: 
 ![MONGOBD ATLASS](https://img.shields.io/badge/mongodb-MongoBD_Atlas-brightgreen?logo=mongodb&logoColor=47A248&label=%20&labelColor=black&color=47A248)
 ![Mongoose](https://img.shields.io/badge/mongoose-Mongoose-brightgreen?logo=mongoose&logoColor=880000&label=%20&labelColor=black&color=880000)
 ![Mongoose Paginate](https://img.shields.io/badge/MongoosePaginate-Mongoose_Paginate_V2-brightgreen?logo=MongoosePaginate&logoColor=880000&label=%20&labelColor=880000&color=880000)
 
-- Testing: 
+- External communication: 
+![Node-Mailer](https://img.shields.io/badge/NodeMailer-NodeMailer-brightgreen?logo=Multer&logoColor=010101&label=%20&labelColor=010101&color=010101)
+![Twilio](https://img.shields.io/badge/twilio-twilio-brightgreen?logo=passport&logoColor=F22F46&label=%20&labelColor=010101&color=F22F46)
+
+- Testing/ Error: 
 ![Faker](https://img.shields.io/badge/Faker-Faker-brightgreen?logo=Multer&logoColor=010101&label=%20&labelColor=010101&color=010101)
+![Winston](https://img.shields.io/badge/Winston-Winston-brightgreen?logo=Winstonk&logoColor=010101&label=%20&labelColor=010101&color=010101)
+![Artillery](https://img.shields.io/badge/Artillery-Artillery-brightgreen?logo=Artillery&logoColor=010101&label=%20&labelColor=010101&color=010101)
+
+- Mailing Template: 
+![Handlebars](https://img.shields.io/badge/handlebarsdotjs-Handlebars-brightgreen?logo=handlebarsdotjs&logoColor=000000&label=%20&labelColor=white&color=000000)
 
 - Front End: 
 None
-<!-- ![Handlebars](https://img.shields.io/badge/handlebarsdotjs-Handlebars-brightgreen?logo=handlebarsdotjs&logoColor=000000&label=%20&labelColor=white&color=000000) -->
+
 
 - version control system: 
 ![Git](https://img.shields.io/badge/git-Git-brightgreen?logo=git&logoColor=F05032&label=%20&labelColor=black&color=F05032)
 ![GitHub](https://img.shields.io/badge/github-GitHub-brightgreen?logo=github&logoColor=white&label=%20&labelColor=black&color=181717)
 
 ## 💼 Technical Elements
-05/02/24 [V1.0]:
-- [NEW] Add the purchase cart route and corresponding services. 
-- [NEW] Add the ticket model and corresponding routes and services.
-- [NEW] Add a mailing services when finishing the purchase
+
+15/02/24 [V1.3]:
+- [NEW] shift from console log to winston logger. Implement a dev and production logger 
+- [NEW] Add a new api to create a test error log at api/test/createFakeErrorLog
+- [NEW] Add artillery test flow for register+login scenario (6 of 200 timed out, median response time 1249ms)
+- [NEW] Implement Node clustering with 8 processors -> artillery test flow for register+login scenario (0 of 200 timed out, median response time 210ms)
+- [NEW] Containerizing the Node.js Web Application with Docker
+
+06/02/24 [V1.2]:
+- Add a new compression for products query using brotly. 
+- Refactor error management
+- Add a new api to get mock product data at at api/test/products
+
+05/02/24 [V1.1]:
+- Add the purchase cart route and corresponding services. 
+- Add the ticket model and corresponding routes and services.
+- Add a mailing services when finishing the purchase
 
 31/01/24 [V1.0]:
 - Transformation of the app to be able to be scalable with the use of design patterns and SOLID principles. Implementation of the Model, View, Controller (MVC):
