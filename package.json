@@ -5,8 +5,8 @@
   "description": "E-commerce Backend with Express and MVC layers",
   "main": "src/main.js",
   "scripts": {
-    "start": "node --env-file=prod.env",
-    "dev": "nodemon --env-file=prod.env  -e js,html,handlebars ",
+    "start": "node src/main.js",
+    "dev": "node --watch --env-file=prod.env src/main.js",
     "test": "node --env-file=prod.env ./test/services/sessions.services.test.js",
     "tdd": "nodemon --env-file=prod.env ./test/services/sessions.services.test.js -e js,html,handlebars"
   },

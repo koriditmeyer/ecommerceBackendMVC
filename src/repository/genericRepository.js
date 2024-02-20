@@ -1,6 +1,6 @@
 import { NotFoundError } from "../models/errors/notFound.error.js";
 import { NotModifiedError } from "../models/errors/notModified.error.js";
-import { NotCreatedError } from "../models/errors/NotCreated.error.js";
+import { NotCreatedError } from "../models/errors/notCreated.error.js";
 import { logger } from "../utils/logger/index.js";
 import { objectToString } from "../utils/objectToString.js";
 
