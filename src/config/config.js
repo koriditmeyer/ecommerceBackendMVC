@@ -1,8 +1,9 @@
 // @ts-nocheck
 import { cpus } from "node:os"
 
-// CPU QUANTITY
+// CLUSTER
 export const NB_PROCS = cpus().length
+export const ACTIVATE_CLUSTER = process.env.ACTIVATE_CLUSTER === 'true'
 
 // SERVER
 export const PORT = parseInt(process.env.PORT)
