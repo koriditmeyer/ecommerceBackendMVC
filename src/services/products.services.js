@@ -1,6 +1,8 @@
 import { IncorrectDataError } from "../models/errors/incorrectData.error.js";
+import { NotFoundError } from "../models/errors/notFound.error.js";
 import { productsRepository } from "../repository/products.repository.js";
 import { logger } from "../utils/logger/index.js";
+import { objectToString } from "../utils/objectToString.js";
 
 export class ProductsServices {
   constructor(productsRepository) {
@@ -8,12 +10,16 @@ export class ProductsServices {
   }
 
   async getProductQuery(query) {
-    logger.debug(`[services] getProductQuery method got: query:${query}`);
+    logger.debug(`[services] getProductQuery method got: query:${objectToString(query)}`);
+    // If nothing in query trow error
+    if (Object.keys(query).length <=0){
+      throw new IncorrectDataError()
+    }
     if (query.limit <= 0) {
       throw new Error(`The limit entered must be positive or null`);
     }
     let aggregateQuery = {};
-    // If a category is specified, use it in the query
+    
     if (query.category) {
       aggregateQuery.category = query.category;
     }
@@ -37,7 +43,7 @@ export class ProductsServices {
       aggregateQuery,
       options
     );
-
+   
     const context = {
       title: "Products",
       existDocs: result.docs.length > 0,
@@ -52,6 +58,9 @@ export class ProductsServices {
       pagingCounter: result.pagingCounter,
       totalDocs: result.totalDocs,
     };
+    if (!context.existDocs){
+      throw new NotFoundError
+    }
     logger.info(`[services] getProductQuery method return user: ${context}`);
     return context;
   }
@@ -62,7 +71,7 @@ export class ProductsServices {
     try {
        product = await this.productsRepository.findOne({ _id: id });
     } catch (error) {
-      throw new Error ("authentication error")
+      throw new NotFoundError()
     }
     logger.info(`[services] findOne method return product: ${product}`);
     return product;

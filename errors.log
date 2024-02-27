@@ -696,3 +696,15 @@
 {"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-27T01:10:29.122Z"}
 {"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-27T01:53:55.808Z"}
 {"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-27T02:24:27.622Z"}
+{"level":"error","message":"authentication error","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T04:26:34.327Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-27T04:28:46.979Z"}
+{"level":"error","message":"query.keys is not a function","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T04:38:27.199Z"}
+{"level":"error","message":"query.keys is not a function","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T04:38:49.892Z"}
+{"level":"error","message":"You must enter a query","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T04:40:02.311Z"}
+{"level":"error","message":"Incorrect Data: \"undefined\"","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-27T04:40:47.451Z"}
+{"level":"error","message":"Incorrect Data: \"[object Object]\"","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-27T04:41:00.437Z"}
+{"level":"error","message":"Incorrect Data","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-27T04:42:43.901Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-27T05:00:44.161Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-27T05:00:44.187Z"}
+{"level":"error","message":"c is not defined","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T05:03:49.956Z"}
+{"level":"error","message":"c is not defined","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T05:03:49.977Z"}
