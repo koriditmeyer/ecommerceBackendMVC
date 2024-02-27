@@ -12,13 +12,16 @@ export const PORT = parseInt(process.env.PORT)
 export const NODE_ENV = process.env.NODE_ENV
 
 // CORS
-export const CLIENT_ORIGIN = "*"; //http://127.0.0.1:5500";
+export const CLIENT_ORIGIN = "http://localhost:5173";
 
 // PERSITANCE
 export const PERSISTENCE = process.env.PERSISTENCE;
 
 // MONGOOSE
 export const MONGODB_CNX_STR = process.env.CNX_STR;
+
+// LINK TOKEN EXPRIRATION
+export const TOKEN_EXP = 3600000; // 1 hour from now
 
 // PASSWORD HASH
 export const ROUNDS = parseInt(process.env.ROUNDS, 10);

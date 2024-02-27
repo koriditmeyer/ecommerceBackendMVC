@@ -14,3 +14,685 @@
 {"level":"info","message":"DB connected to mongodb+srv://koriditmeyer:BPfgRwT28IHTHunI@spaapp.bgppebz.mongodb.net/ecommerce","service":"user-service","timestamp":"2024-02-15T00:16:52.564Z"}
 {"level":"silly","message":"Api router loaded","service":"user-service","timestamp":"2024-02-15T00:16:52.621Z"}
 {"level":"info","message":"HTTP server listening on port: 8080","service":"user-service","timestamp":"2024-02-15T00:16:52.628Z"}
+{"level":"error","message":"Bad Request","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-22T10:36:05.197Z"}
+{"level":"error","message":"Bad Request","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T02:15:57.638Z"}
+{"level":"error","message":"Bad Request","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T02:23:24.181Z"}
+{"level":"error","message":"Bad Request","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T02:24:04.205Z"}
+{"level":"error","message":"Bad Request","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T03:38:31.596Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'includes')","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T04:29:46.354Z"}
+{"level":"error","message":"Bad Request","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T04:53:08.536Z"}
+{"level":"error","message":"Incorrect Data: Email and password are required.","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-23T04:59:55.963Z"}
+{"level":"error","message":"Duplicated element: email","service":"Ecommerce","status":"[Custom]","statusCode":409,"timestamp":"2024-02-23T05:00:02.613Z"}
+{"level":"error","message":"Incorrect Field entered","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-23T12:05:01.414Z"}
+{"level":"error","message":"Incorrect Field entered","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-23T12:05:16.198Z"}
+{"level":"error","message":"Incorrect Field entered","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-23T12:05:50.402Z"}
+{"level":"error","message":"Incorrect Field entered","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-23T12:06:02.726Z"}
+{"level":"error","message":"Incorrect Field entered","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-23T12:06:33.071Z"}
+{"level":"error","message":"Incorrect Field entered","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-23T12:09:07.676Z"}
+{"level":"error","message":"Incorrect Field entered","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-23T12:09:30.402Z"}
+{"level":"error","message":"Incorrect Field entered","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-23T12:09:54.710Z"}
+{"level":"error","message":"Incorrect Field entered","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-23T12:10:05.326Z"}
+{"level":"error","message":"Incorrect Field entered","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-23T12:10:14.325Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:28.498Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:28.548Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:28.593Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:28.638Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:28.677Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:28.727Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:28.782Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:28.838Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:35.413Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:35.457Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:35.514Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:35.587Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:35.638Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:35.718Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:35.777Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:35.838Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:41.428Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:41.472Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:41.510Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:41.563Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:41.669Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:41.751Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:41.817Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:02:41.877Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:00.452Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:00.535Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:00.606Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:00.690Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:00.787Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:00.847Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:00.923Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:00.998Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:05.417Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:05.491Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:05.564Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:05.617Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:05.699Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:05.773Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:05.837Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:05.878Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:09.430Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:09.475Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:09.527Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:09.583Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:09.647Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:09.742Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:09.797Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:09.847Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:12.436Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:12.491Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:12.549Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:12.611Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:12.687Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:12.767Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:12.923Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:03:13.077Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:19.891Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:19.964Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:20.027Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:20.077Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:20.117Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:20.166Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:20.267Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:20.381Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:47.596Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:47.644Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:47.687Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:47.737Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:47.827Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:47.887Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:47.952Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:47.998Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:53.233Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:53.277Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:53.322Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:53.365Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:53.421Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:53.457Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:53.511Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:04:53.565Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:22:24.119Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:22:24.187Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:22:24.239Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:22:24.293Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:22:24.362Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:22:24.431Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:22:24.481Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:22:24.533Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:22:37.531Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:22:37.580Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:22:37.656Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:22:37.729Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:22:37.774Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:22:37.849Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:22:37.901Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:22:37.951Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:24:38.246Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:24:38.315Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:24:38.625Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:24:38.859Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:24:38.946Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:24:38.985Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:24:39.053Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:24:39.158Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:36:43.086Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:36:43.158Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:37:25.456Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:38:06.850Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:38:06.902Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:38:50.834Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:38:50.889Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:39:24.959Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:39:25.011Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:39:43.141Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:39:45.382Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:39:45.434Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:48:20.515Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:48:28.941Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:48:29.019Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:49:20.022Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:49:37.142Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:49:44.704Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:49:49.819Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:49:55.849Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:49:55.910Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:50:08.058Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:50:32.932Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:50:32.989Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:50:36.509Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:50:36.562Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:50:43.638Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:50:43.726Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:51:19.608Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:51:44.072Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:52:19.276Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:52:23.819Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T13:52:36.602Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T13:55:32.926Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:19:56.812Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:19:56.893Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:23:07.264Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:23:07.326Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:23:27.087Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T14:23:39.690Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T14:24:07.378Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T14:24:10.000Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T14:24:17.584Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T14:24:52.036Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T14:24:52.182Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T14:25:03.694Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T14:25:20.876Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T14:25:30.470Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T14:25:30.810Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T14:26:01.244Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:26:13.230Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:26:13.279Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:26:49.854Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:26:49.939Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:29:43.712Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:29:43.788Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:31:10.929Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:31:10.987Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:32:28.174Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:32:28.237Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:32:59.302Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:33:00.479Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:33:00.566Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:33:12.651Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:33:22.559Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:33:22.620Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:33:25.607Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-23T14:33:25.668Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T14:35:53.868Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T14:58:50.281Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T15:08:13.604Z"}
+{"level":"error","message":"Duplicated element: email","service":"Ecommerce","status":"[Custom]","statusCode":409,"timestamp":"2024-02-23T15:13:24.768Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-23T15:15:23.316Z"}
+{"level":"error","message":"Duplicated element: email","service":"Ecommerce","status":"[Custom]","statusCode":409,"timestamp":"2024-02-24T12:10:54.578Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-24T13:39:41.573Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-24T14:02:01.033Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-24T14:04:37.304Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-25T01:03:23.637Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-25T03:16:54.333Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-25T03:22:44.470Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-25T03:36:40.163Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T03:45:24.963Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:08:10.451Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:09:38.990Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:10:12.085Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:10:53.800Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:15:44.999Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:16:06.695Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:17:33.123Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:18:15.768Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:19:43.279Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T04:20:24.552Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:20:27.277Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:20:27.329Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T04:23:44.447Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T04:23:44.533Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T04:23:45.373Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T04:23:45.465Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T04:23:55.475Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T04:23:55.526Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T04:26:06.531Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T04:26:06.581Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:27:40.396Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:27:40.600Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T04:28:02.104Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T04:28:02.180Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:37:51.462Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:40:29.778Z"}
+{"level":"error","message":"Invalid or expired token","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:40:29.941Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T04:40:57.465Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T04:40:57.548Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:42:16.716Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:43:41.281Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:56:44.715Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:56:44.795Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-25T04:57:02.765Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:57:40.503Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T04:59:36.234Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:02:02.116Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:02:02.166Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:02:33.989Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:02:34.036Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:02:43.537Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:02:43.612Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:03:03.177Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:03:03.234Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:05:18.711Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:05:18.784Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:08:22.403Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:08:22.471Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:15:03.756Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:15:12.578Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:16:09.988Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:17:06.990Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:23:39.558Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:23:39.628Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:23:43.195Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:23:43.260Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:24:16.888Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:24:16.945Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:26:44.304Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T05:27:23.903Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:43:42.642Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:43:42.697Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:48:53.286Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:48:53.331Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:49:52.731Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:49:52.769Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:49:52.820Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:49:52.877Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:49:52.936Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:49:53.017Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:49:53.072Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:49:53.147Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:50:04.458Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:50:04.510Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:53:01.599Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:53:01.647Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:55:00.453Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:55:00.522Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:56:55.205Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:56:55.245Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:57:43.994Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T06:57:44.061Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T07:08:53.556Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T07:08:53.623Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T07:09:08.243Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T07:09:08.348Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T07:10:24.826Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-25T07:10:46.369Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-25T07:12:48.429Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:12:58.598Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:13:28.383Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:14:05.126Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:15:51.891Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:17:56.111Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:18:45.328Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:18:45.401Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:22:36.359Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:22:36.419Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:25:17.963Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:25:18.030Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:27:21.006Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:27:21.146Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:27:32.912Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:27:32.960Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:32:49.184Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:34:20.666Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:37:15.869Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:38:05.560Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:38:15.964Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:39:23.027Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:40:15.909Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:41:06.844Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:41:44.703Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:41:53.868Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:42:33.512Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:42:59.424Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:43:23.357Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:43:23.406Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:44:02.664Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:44:02.719Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:44:29.475Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:44:29.628Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:44:46.451Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:44:46.505Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:47:07.432Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:47:53.420Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:48:16.299Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:48:34.529Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-25T07:48:40.012Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:48:49.915Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:50:14.492Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:50:22.327Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:50:28.329Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:50:58.873Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:51:31.146Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:51:39.077Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:51:59.404Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:52:03.931Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:54:13.359Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T07:56:37.301Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:10:07.223Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:10:50.489Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T08:11:43.387Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T08:11:43.447Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T08:11:43.863Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:11:43.893Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T08:11:43.913Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:11:43.940Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:11:44.000Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:11:44.055Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:11:44.105Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:11:44.160Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:12:10.342Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:12:10.415Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:14:30.876Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:14:30.932Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:16:04.023Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:16:04.080Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:16:28.133Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:16:28.178Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T08:59:45.399Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T09:00:29.198Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T09:01:29.516Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T09:02:07.378Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T11:06:12.743Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-25T11:10:31.092Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T11:11:21.003Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T11:11:21.068Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:12:40.445Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:21:36.023Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:22:09.772Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:22:09.819Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:22:19.508Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:22:19.553Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:22:33.327Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:22:33.390Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:22:41.446Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:22:41.499Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:22:46.268Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:22:46.327Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T11:24:50.447Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T11:24:50.522Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T11:25:31.158Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T11:25:31.213Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:25:45.807Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:25:45.941Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:25:45.994Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T11:30:20.926Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T11:30:20.988Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:31:28.180Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:31:28.257Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:31:28.306Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:38:29.296Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:38:29.342Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:38:45.535Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:38:45.617Z"}
+{"level":"error","message":"Duplicated element: email","service":"Ecommerce","status":"[Custom]","statusCode":409,"timestamp":"2024-02-25T11:43:36.627Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-25T11:50:23.099Z"}
+{"level":"error","message":"Duplicated element: email","service":"Ecommerce","status":"[Custom]","statusCode":409,"timestamp":"2024-02-25T11:50:44.519Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:51:18.271Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:53:51.037Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:54:25.729Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:54:25.773Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:56:48.446Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T11:59:04.594Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:00:13.859Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:00:13.956Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:00:17.287Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:00:17.353Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:00:26.412Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:00:26.473Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:02:01.832Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:02:01.906Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:03:42.620Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:04:00.780Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:04:00.837Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:04:23.780Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:04:23.832Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:06:15.784Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:07:28.615Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:07:51.716Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:09:14.891Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:10:50.433Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:10:50.494Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:11:00.354Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:11:00.414Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:11:44.229Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:13:09.386Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:13:48.292Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:15:05.574Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:15:23.766Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:17:54.820Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:19:49.884Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:20:31.369Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:21:01.540Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:22:28.934Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:23:33.219Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:24:57.143Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:26:34.972Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:27:44.751Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:27:54.532Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:31:13.686Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:31:49.638Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:32:57.834Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:33:28.897Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:34:40.340Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:35:28.399Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:36:10.063Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:37:47.459Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:38:15.189Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:38:47.168Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:38:55.882Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:39:39.923Z"}
+{"level":"error","message":"invalid stored data to compare","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T12:40:12.737Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-25T12:47:34.205Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-25T12:49:08.497Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:07:22.236Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:07:22.250Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:09:12.642Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:09:12.651Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:12:01.879Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:12:01.906Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:13:13.878Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:13:13.917Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:17:46.258Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:17:46.287Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:18:05.772Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:18:05.803Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:18:47.837Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:18:47.872Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:19:42.532Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:19:42.559Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:22:11.058Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:22:11.088Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:23:05.308Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:23:05.335Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:23:23.436Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T13:23:23.485Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T13:27:26.944Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T13:27:27.030Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T13:28:43.842Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T13:28:43.893Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T13:30:01.701Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T13:30:01.743Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T13:30:32.136Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T13:30:32.236Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T13:33:31.754Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T13:33:31.793Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T13:34:17.048Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T13:34:17.081Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T13:35:52.915Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T13:35:52.936Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T14:22:13.285Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T14:22:13.319Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T14:23:43.396Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T14:23:43.422Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T14:23:49.269Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T14:23:49.293Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T14:26:29.838Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T14:26:29.865Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T14:26:57.564Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T14:26:57.580Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T14:27:44.828Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T14:27:44.857Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T14:29:25.162Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T14:29:25.203Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T14:30:39.251Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-25T14:30:39.278Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T14:31:11.406Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-25T14:31:11.501Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-25T14:38:31.730Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-25T14:40:10.737Z"}
+{"level":"error","message":"Verification Error - You are not a Verid User","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-25T14:40:21.833Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-25T14:42:06.415Z"}
+{"level":"error","message":"Authentication Error - Please Check your credentials","service":"Ecommerce","status":"[Custom]","statusCode":401,"timestamp":"2024-02-25T15:36:15.944Z"}
+{"level":"error","message":"Authentication Error - Please Check your credentials","service":"Ecommerce","status":"[Custom]","statusCode":401,"timestamp":"2024-02-25T15:42:31.205Z"}
+{"level":"error","message":"Authentication Error - Please Check your credentials","service":"Ecommerce","status":"[Custom]","statusCode":401,"timestamp":"2024-02-25T15:42:32.309Z"}
+{"level":"error","message":"Authentication Error - Please Check your credentials","service":"Ecommerce","status":"[Custom]","statusCode":401,"timestamp":"2024-02-25T15:42:33.433Z"}
+{"level":"error","message":"Authentication Error - Please Check your credentials","service":"Ecommerce","status":"[Custom]","statusCode":401,"timestamp":"2024-02-25T15:42:39.177Z"}
+{"level":"error","message":"Authentication Error - Please Check your credentials","service":"Ecommerce","status":"[Custom]","statusCode":401,"timestamp":"2024-02-25T15:43:56.277Z"}
+{"level":"error","message":"Authentication Error - Please Check your credentials","service":"Ecommerce","status":"[Custom]","statusCode":401,"timestamp":"2024-02-25T15:43:58.283Z"}
+{"level":"error","message":"Authentication Error - Please Check your credentials","service":"Ecommerce","status":"[Custom]","statusCode":401,"timestamp":"2024-02-25T15:44:47.097Z"}
+{"level":"error","message":"Authentication Error - Please Check your credentials","service":"Ecommerce","status":"[Custom]","statusCode":401,"timestamp":"2024-02-25T15:44:48.804Z"}
+{"level":"error","message":"Authentication Error - Please Check your credentials","service":"Ecommerce","status":"[Custom]","statusCode":401,"timestamp":"2024-02-25T15:44:55.451Z"}
+{"level":"error","message":"Authentication Error - Please Check your credentials","service":"Ecommerce","status":"[Custom]","statusCode":401,"timestamp":"2024-02-25T15:45:38.233Z"}
+{"level":"error","message":"Authentication Error - Please Check your credentials","service":"Ecommerce","status":"[Custom]","statusCode":401,"timestamp":"2024-02-25T15:45:45.965Z"}
+{"level":"error","message":"Authentication Error - Please Check your credentials","service":"Ecommerce","status":"[Custom]","statusCode":401,"timestamp":"2024-02-25T15:46:26.469Z"}
+{"level":"error","message":"Incorrect Data: undefined","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-25T15:49:55.947Z"}
+{"level":"error","message":"Incorrect Data: undefined","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-25T15:50:14.960Z"}
+{"level":"error","message":"Incorrect Data: undefined","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-26T07:20:40.941Z"}
+{"level":"error","message":"Incorrect Data: undefined","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-26T07:24:38.292Z"}
+{"level":"error","message":"Incorrect Data: undefined","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-26T08:02:02.305Z"}
+{"level":"error","message":"Incorrect Data: undefined","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-26T08:03:52.295Z"}
+{"level":"error","message":"Incorrect Data: undefined","service":"Ecommerce","status":"[Custom]","statusCode":400,"timestamp":"2024-02-26T08:06:11.063Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-26T10:31:38.795Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:17:57.764Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:17:57.776Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:18:10.029Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:18:10.223Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:18:22.984Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:18:22.994Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:18:44.074Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:18:44.080Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:18:49.756Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:18:49.828Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:19:15.510Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:19:15.620Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:19:21.651Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:19:21.856Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:21:58.416Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:21:58.527Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:22:09.327Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:22:09.438Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:22:18.925Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:22:18.935Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:22:28.882Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:22:28.930Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:22:44.278Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:22:44.484Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:23:05.885Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:23:06.107Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:23:52.454Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:23:52.478Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:25:20.696Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:25:21.084Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:25:28.663Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:25:28.760Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:25:48.362Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:25:48.641Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:25:53.027Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:25:53.311Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:25:56.407Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:25:56.756Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:26:07.484Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:26:07.526Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:26:23.932Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:26:24.127Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:26:31.345Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:26:31.700Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:26:34.849Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:26:34.945Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:26:39.568Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:26:39.762Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:26:44.809Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:26:45.074Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:27:28.575Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:27:28.630Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:27:49.237Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:27:49.400Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:27:57.435Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:27:57.495Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:28:04.125Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:28:04.189Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:28:49.674Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:28:49.920Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:28:56.567Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:28:56.614Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:29:01.453Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:29:01.515Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:29:08.104Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:29:08.123Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:29:17.609Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:29:17.732Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:29:21.760Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:29:21.807Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:31:04.397Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:31:04.587Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:31:19.296Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:31:19.501Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:31:33.916Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:31:34.011Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:31:39.199Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:31:39.273Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:31:43.262Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:31:43.334Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:31:49.800Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:31:50.463Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:31:53.163Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:31:53.198Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:31:58.735Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:31:58.788Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:32:12.080Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:32:12.091Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:40:07.954Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:40:08.047Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:40:12.550Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:40:12.655Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:46:53.687Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:46:53.772Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:47:12.628Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:47:12.657Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:47:15.641Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:47:15.761Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:47:42.068Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:47:42.281Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:48:05.753Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:48:05.782Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:48:11.910Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:48:12.184Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:48:17.405Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:48:17.693Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:48:23.248Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:48:23.290Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:48:39.016Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:48:39.211Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:48:48.628Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:48:48.952Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:48:55.922Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:48:56.168Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:49:49.227Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:49:49.254Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:49:52.678Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:49:52.705Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:50:22.406Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:50:22.457Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:50:26.801Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:50:26.853Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:52:50.900Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:52:52.383Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:53:19.106Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:54:58.188Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:54:58.344Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:55:22.918Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:55:23.162Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:55:31.010Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:55:31.015Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:56:00.927Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:56:01.375Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:56:23.844Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:56:23.852Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:56:41.740Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:56:41.782Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:56:44.771Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T00:56:44.930Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-27T01:10:29.122Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-27T01:53:55.808Z"}
+{"level":"warning","message":"[Authentication] No JWT cookie found, nothing to clear.","service":"Ecommerce","timestamp":"2024-02-27T02:24:27.622Z"}

@@ -10,7 +10,11 @@ export function handlerErrorCustom(error, req, res, next) {
     statusCode = 403; // Forbidden -  insufficient rights to a resource
   } else if (error.type === ErrorTypes.INCORRECT_DATA_ERROR) {
     statusCode = 400; // Bad request
+  } else if (error.type === ErrorTypes.REGISTRATION_ERROR) {
+    statusCode = 400; // Bad request
   } else if (error.type === ErrorTypes.DB.VALIDATION_ERROR) {
+    statusCode = 400; // Bad request
+  } else if (error.type === ErrorTypes.DB.INCORRECT_FIELD) {
     statusCode = 400; // Bad request
   } else if (error.type === ErrorTypes.DB.DUPLICATE_ERROR) {
     statusCode = 409; // Confilct

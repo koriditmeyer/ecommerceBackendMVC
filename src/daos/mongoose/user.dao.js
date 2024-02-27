@@ -5,8 +5,11 @@ import { newId } from "../../utils/id.js";
 const userSchema = new mongoose.Schema(
   {
     _id: { type: String, default: newId},
-    name: { type: String, required: true },
+    first_name: { type: String, required: true },
     last_name: { type: String, required: true },
+    token: { type: String, required: false },
+    verified: { type: Boolean, required: true, default: false },
+    tokenExpiry: { type: Date, required: false },
     email: { type: String, required: true, unique: true },
     age: Number,
     password: { type: String, required: true },
@@ -16,7 +19,7 @@ const userSchema = new mongoose.Schema(
     postal_code: { type: String },
     country_code: { type: String },
     date: { type: Date, default: Date.now },
-    role: { type: String, default: "user" },
+    roles: { type: Array, default: ["user"] },
     cartId: { type: String, ref: "Cart" },
     provider: { type: String, default: "local" },
     providerId: String,

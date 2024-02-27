@@ -38,9 +38,13 @@ class GmailEmailService {
       emailOptions.attachments = attachments;
     }
 
-    await this.transport.sendMail(emailOptions);
+    try {
+      await this.transport.sendMail(emailOptions);
+    } catch (error) {
+      logger.debug('SendMail Error:', error);
+      throw new Error('Error sending email')
+    }
     logger.info(`[services] send method return email sent` )
-
   }
 }
 

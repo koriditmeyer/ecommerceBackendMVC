@@ -16,12 +16,13 @@ import { AuthenticationServerError } from "../models/errors/authentication.error
 //create cookie
 export async function appendJwtAsCookie(req, res, next) {
   try {
+    const cookieData = new UserResponseDTO(req.user).toCookie()
     req.logger.debug(
-      `[Authentication] Try to set cookie with ${objectToString(req.user)}`
+      `[Authentication] Try to set cookie with ${objectToString(cookieData)}`
     );
     let accessToken;
     try {
-      accessToken = await encrypt(req.user);
+      accessToken = await encrypt(cookieData);
     } catch (error) {
       throw new AuthenticationServerError();
     }
@@ -41,7 +42,9 @@ export async function removeJwtFromCookies(req, res, next) {
     req.logger.info("[Authentication] JWT cookie found, clearing it.");
     res.clearCookie(JWT_COOKIE_NAME); // Clear the cookie if it exists
   } else {
-    req.logger.warning("[Authentication] No JWT cookie found, nothing to clear.");
+    req.logger.warning(
+      "[Authentication] No JWT cookie found, nothing to clear."
+    );
   }
   next();
 }
@@ -67,7 +70,8 @@ passport.use(
       // Asynchronous callback function for the strategy
       try {
         req.logger.debug("[Passport] local-register strategy");
-        const userData = await sessionsServices.register(req.body, "local"); // Calls User model's register method with the request body
+        const user = req.body;
+        const userData = await sessionsServices.registerLocal(user); // Calls User model's register method with the request body
         req.logger.info(
           "[Passport] local-register strategy returns User:",
           userData
@@ -87,7 +91,7 @@ passport.use(
     {
       usernameField: "email",
     },
-    async ( email, password, done) => {
+    async (email, password, done) => {
       try {
         logger.debug("[Passport] local-login strategy");
         const userData = await sessionsServices.login({ email, password });
@@ -97,7 +101,7 @@ passport.use(
         );
         done(null, userData);
       } catch (error) {
-        done(error)
+        done(error);
       }
     }
   )
@@ -134,8 +138,7 @@ passport.use(
           if (req?.signedCookies) {
             token = req.signedCookies[`${JWT_COOKIE_NAME}`];
             req.logger.info(
-              "[Passport] Enter Passport JWT, Extracted Token:",
-              token
+              `[Passport] Enter Passport JWT, Extracted Token:${token}`
             ); // Log the extracted token
           }
           return token;
@@ -160,6 +163,7 @@ import {
 import { userServices } from "../services/user.services.js";
 import { objectToString } from "../utils/objectToString.js";
 import { logger } from "../utils/logger/index.js";
+import { UserResponseDTO } from "../daos/dtos/user.dto.js";
 
 passport.use(
   "github",
@@ -171,7 +175,7 @@ passport.use(
       callbackURL: githubCallbackUrl,
       scope: ["user:email"],
     },
-    async ( accessToken, refreshToken, profile, done) => {
+    async (accessToken, refreshToken, profile, done) => {
       try {
         logger.debug(`[Passport] Github strategy`);
         // search first if user exist in DB
@@ -194,7 +198,7 @@ passport.use(
             profilePhoto: profile.photos[0].value || "",
           };
           // Create a new user if not exists
-          user = await sessionsServices.register(userDB, "github");
+          user = await sessionsServices.registerAuth(userDB);
         }
         logger.debug(`[Passport] Github strategy return ${user}`);
         return done(null, user);

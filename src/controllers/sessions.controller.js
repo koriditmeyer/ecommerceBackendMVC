@@ -4,19 +4,36 @@ import {
   clearSession,
   removeJwtFromCookies,
 } from "../middlewares/authentication.js";
-import { AuthenticationError } from "../models/errors/authentication.error.js";
 import { IncorrectDataError } from "../models/errors/incorrectData.error.js";
+import { sessionsServices } from "../services/sessions.services.js";
 
 // Express, middleware functions need to be listed in an array or 
 // passed as separate arguments to the route handler.
-export const registerUser = [
+export const registerUser =[
   validateRegistrationData,
   authenticate("local-register"),
+  async (req, res, next) => {
+    res["successfullPost"](req.user)
+  }
+]
+
+export const verifyUser = [
+  async (req, res, next) => {
+    const { email, token } = req.query
+    const decodedEmail = decodeURIComponent(email);
+   try {
+     req.user =await sessionsServices.verify(token, decodedEmail) // Attach the user to the request object
+     next()
+   } catch (error) {
+    next(error)
+   }
+  },
   appendJwtAsCookie,
   async (req, res, next) => {
-    res["successfullPost"](req.user);
+    res["successfullGet"](req.user);
   },
 ];
+
 
 export const loginUser = [
   authenticate("local-login"),

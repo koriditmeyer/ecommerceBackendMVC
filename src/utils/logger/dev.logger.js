@@ -28,7 +28,7 @@ const devLogger = () => {
 
   return createLogger({
     levels: customLevels.levels, // Use custom levels
-    level: "info",
+    level: "debug",
     // format: winston.format.simple(),
     format: combine(
       format.colorize(),

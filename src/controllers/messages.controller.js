@@ -8,7 +8,7 @@ export async function sendMail(req, res, next) {
     const templateName = mailData.templateName;
     const message = mailData.message;
     const attachments = mailData.attachments;
-    req.logger.debug("Got mail data: " +  mailData);
+    req.logger.debug("[Controller] Got mail data: " +  mailData);
 
     const email = await emailService.send(
       destinatary,
@@ -24,7 +24,7 @@ export async function sendSMS(req, res, next) {
     const smsData = req.body;
     const destinatary = smsData.destinatary;
     const message = smsData.message;
-    req.logger.debug("Got SMS data: " +  smsData);
+    req.logger.debug("[Controller] Got SMS data: " +  smsData);
     const sms = await smsService.send(
       destinatary,
       message,

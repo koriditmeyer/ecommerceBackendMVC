@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import {
   dBDuplicateKeyError,
+  dBIncorrectFieldError,
   dBInternalError,
   dBValidationError,
 } from "../models/errors/dB.error.js";
@@ -25,6 +26,14 @@ export function handlerErrorMongoose(err, req, res, next) {
     req.logger.debug({ status: `[Mongoose] - ${status}`  , message });
     next( new dBInternalError())
   }
+  // Field not present
+  if (err.message.includes("is not in schema and strict mode is set to throw")) {
+    // Handle the strict mode schema error
+    const status = "IncorrectField";
+    const message = err.message;
+    req.logger.debug({ status: `[Mongoose] - ${status}`, message });
+    next(new dBIncorrectFieldError());
+}
 
     // VersionError handling
   else if (err instanceof mongoose.Error.VersionError) {

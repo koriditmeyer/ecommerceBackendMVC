@@ -1,4 +1,4 @@
-import { MONGODB_CNX_STR, PORT } from "../config/config.js"; // import constants configuration parameters in external file
+import { MONGODB_CNX_STR } from "../config/config.js"; // import constants configuration parameters in external file
 import mongoose from "mongoose"; // import Mongoose
 import { logger } from "../utils/logger/index.js";
 

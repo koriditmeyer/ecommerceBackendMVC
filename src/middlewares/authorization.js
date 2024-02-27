@@ -1,14 +1,21 @@
 import { AuthorizationError } from "../models/errors/authorization.error.js";
+import { VerificationError } from "../models/errors/verification.error.js";
 import { usersRepository } from "../repository/user.repository.js";
 import { userServices } from "../services/user.services.js";
+import { logger } from "../utils/logger/index.js";
 
 // In Express, middleware functions should follow the (req, res, next) signature
 
 //middleware to check the user role contained in the cookie and authorise the user accordingly
 export function allowedRolesCookie(requiredRoles) {
   return async (req, res, next) => {
-    // console.log(req.user)
-    if (!requiredRoles.includes(req.user.role)) {
+    logger.debug(`[allowedRolesCookie] user verified: ${req.user.verified}`)
+    if (!req.user.verified) {
+      return next(new VerificationError());
+    }
+    logger.debug(`[allowedRolesCookie] user authorised: ${req.user.roles.some(role => requiredRoles.includes(role))}`)
+    if (!req.user.roles.some(role => requiredRoles.includes(role))) {
+      // if (!requiredRoles.includes(req.user.roles)) {
       return next(new AuthorizationError());
     }
     next();
@@ -21,7 +28,7 @@ export function allowedRolesDB(requiredRoles) {
       //  user's ID
       const user = await usersRepository.findOne({_id:req.user._id});
       console.log(user)
-      if (!requiredRoles.includes(user.role)) {
+      if (!req.user.roles.some(role => requiredRoles.includes(role))) {
         return next(new AuthorizationError());
       }
       next();

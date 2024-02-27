@@ -58,7 +58,12 @@ export class ProductsServices {
 
   async findOne(id) {
     logger.debug(`[services] findOne method got: id:${id}`);
-    const product = await this.productsRepository.findOne({ _id: id });
+    let product
+    try {
+       product = await this.productsRepository.findOne({ _id: id });
+    } catch (error) {
+      throw new Error ("authentication error")
+    }
     logger.info(`[services] findOne method return product: ${product}`);
     return product;
   }

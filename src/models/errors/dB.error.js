@@ -20,3 +20,10 @@ export class dBDuplicateKeyError extends Error {
       this.type = ErrorTypes.DB.INTERNAL_ERROR
     }
   }
+
+  export class dBIncorrectFieldError extends Error {
+    constructor(field) {
+      super("Incorrect Field entered")
+      this.type = ErrorTypes.DB.INCORRECT_FIELD
+    }
+  }

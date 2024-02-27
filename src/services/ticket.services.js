@@ -33,7 +33,7 @@ export class TicketServices {
     const destinatary=user.email
     const templateName="ticket"
     const message=ticket 
-    emailService.send(destinatary, object,templateName, message )
+    await emailService.send(destinatary, object,templateName, message )
     logger.info(`[services] sendTicketEmail method return message sucessfully sent` )
 
   }

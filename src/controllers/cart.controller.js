@@ -7,7 +7,7 @@ export async function createCart(req, res, next) {
 
 export async function getCart(req, res, next) {
     const cid = req.params.cid;
-    req.logger.debug("got cart id to search: " +  cid);
+    req.logger.debug("[Controller] got cart id to search: " +  cid);
     const cart = await cartServices.findOne(cid);
     res["successfullGet"](cart);
 }
@@ -15,14 +15,14 @@ export async function getCart(req, res, next) {
 export async function addToCart(req, res, next) {
     const { cid, pid } = req.params;
     let quantity = req.body.quantity;
-    req.logger.debug("for cart id: " +  cid+ " add product id:"+pid+" with quantity:"+quantity);
+    req.logger.debug("[Controller] for cart id: " +  cid+ " add product id:"+pid+" with quantity:"+quantity);
     const addedProduct = await cartServices.addToCart(cid, pid, quantity);
     res["successfullPost"](addedProduct);
 }
 // ✓	DELETE A PRODUCT FROM CART
 export async function removeItemsCart(req, res, next) {
     const { cid, pid } = req.params;
-    req.logger.debug("for cart id: " +  cid+ " delete product id:"+pid);
+    req.logger.debug("[Controller] for cart id: " +  cid+ " delete product id:"+pid);
     const deletedProduct = await cartServices.removeItemsCart(cid, pid);
     res["successfullDelete"](deletedProduct);
 }
@@ -30,7 +30,7 @@ export async function removeItemsCart(req, res, next) {
 export async function updateCart(req, res, next) {
     const cid = req.params.cid;
     let products = req.body;
-    req.logger.debug("for cart id: " +  cid+ " update cart with:"+products);
+    req.logger.debug("[Controller] for cart id: " +  cid+ " update cart with:"+products);
 
     const updatedCart = await cartServices.updateCart(cid, products);
     res["successfullPut"](updatedCart);
@@ -38,14 +38,14 @@ export async function updateCart(req, res, next) {
 
 export async function clearCart(req, res, next) {
     const cid = req.params.cid;
-    req.logger.debug("Clear cart id: " +  cid);
+    req.logger.debug("[Controller] Clear cart id: " +  cid);
     const deletedProducts = await cartServices.clearCart(cid);
     res["successfullDelete"](deletedProducts);
 }
 
 export async function purchaseItemsCart(req, res, next) {
     const cid = req.params.cid;
-    req.logger.debug("Purchase cart id: " +  cid);
+    req.logger.debug("[Controller] Purchase cart id: " +  cid);
     const purchasedProducts = await cartServices.purchaseItemsCart(cid);
     res["successfullGet"](purchasedProducts);
 }
