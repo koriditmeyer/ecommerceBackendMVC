@@ -78,10 +78,10 @@ export class ProductsServices {
   }
 
   async create(files, productData) {
-    logger.debug(`[services] create method got: file:${files}, productData:${productData}`);
+    logger.debug(`[services] create method got productData:${objectToString(productData)}`);
     if (files?.length) {
       console.log(files);
-      productData.thumbnail = files.map((e) => e.path);
+      productData.thumbnail = files.map((e) => e.path.replace(/\\/g, '/'));
     }
     const addedProduct = await this.productsRepository.create(productData);
     logger.info(`[services] create method return added product: ${addedProduct}`);
@@ -89,7 +89,7 @@ export class ProductsServices {
   }
 
   async updateOne(id, updatedData) {
-    logger.debug(`[services] updateOne method got: id:${id}, updatedData:${updatedData}`);
+    logger.debug(`[services] updateOne method got: id:${id}, updatedData:${objectToString(updatedData)}`);
     console.log(id, updatedData);
     if (updatedData.thumbnail) {
       throw new Error("You can't modify picture URL with this endpoint");
@@ -105,12 +105,12 @@ export class ProductsServices {
   async deleteProduct(id) {
     logger.debug(`[services] deleteProduct method got: id:${id}`);
     const deletedProduct = await this.productsRepository.deleteOne({ _id: id });
-    logger.info(`[services] findOne method return deletd product: ${deletedProduct}`);
+    logger.info(`[services] findOne method return deletd product: ${objectToString(deletedProduct)}`);
     return deletedProduct;
   }
 
   async updateImage(id, newImages) {
-    logger.debug(`[services] updateImage method got: id:${id}, newImages ${newImages}`);
+    logger.debug(`[services] updateImage method got: id:${id}`);
     if (!newImages) {
       throw new Error(`You need to upload some images`);
     }

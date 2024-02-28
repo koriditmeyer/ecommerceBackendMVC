@@ -21,7 +21,7 @@ const productSchema = new mongoose.Schema(
     badge: { type: String },
     thumbnail: {
       type: [String],
-      default: ["static\\img\\products\\defaultProduct.jpeg"],
+      default: ["static/img/products/defaultProduct.jpeg"],
       required: false,
     }, // Set thumbnail as an array of strings, default to an empty array
   },

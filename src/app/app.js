@@ -11,7 +11,6 @@ import { sessions } from "../middlewares/sessions.js"; // import sessions midelw
 import cors from "cors";
 import { CLIENT_ORIGIN } from "../config/config.js";
 import { loggerInRequest } from "../middlewares/logger.js";
-
 /*
  *
  * INITIALISE
@@ -40,8 +39,10 @@ app.use(cookies); //use cookieParser to create cookies with secret key - placed 
 app.use(sessions); // Session - External middleware to handle sessions (need to be before other middleware) or OAuth
 app.use(PassportAutenticacion); // External middleware to Initialize Passport and restore authentication state, if any, from the session
 
+
+
 app.use("/api", apiRouter);
-// pp.use("/static", express.static("./static")); // Incorporated middleware - images
+app.use("/static", express.static("./static")); // Incorporated middleware - images
 // app.use("/", webRouter); // External middleware
 // Middleware to manage errors
 app.use(function (err, req, res, next) {

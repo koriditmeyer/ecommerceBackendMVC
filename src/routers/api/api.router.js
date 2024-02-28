@@ -10,6 +10,21 @@ import { ticketRouter } from "./ticket.router.js";
 import { messageRouter } from "./messages.router.js";
 import { logger } from "../../utils/logger/index.js";
 import {  testRouter } from "./test.router.js";
+import swaggerUiExpress from "swagger-ui-express"
+import swaggerJSDoc from "swagger-jsdoc";
+
+const specs = swaggerJSDoc({
+    openapi:'3.0.1',
+    definition:{
+      info:{
+        title:'E-commerce API',
+        description:'E-commerce API with MVC',
+        version:'1.0'
+      }
+    },
+    apis:['./docs/**/*.yaml']
+  })
+  
 
 export const apiRouter = Router();
 
@@ -17,6 +32,7 @@ export const apiRouter = Router();
 apiRouter.use(handlerSuccess);
 
 // * MIDDLEWARE AT ROUTER LEVEL
+apiRouter.use("/docs",swaggerUiExpress.serve, swaggerUiExpress.setup(specs))
 apiRouter.use("/products", productsRouter);
 apiRouter.use("/carts", cartRouter);
 apiRouter.use("/sessions", sessionsRouter); // External middleware for sessions

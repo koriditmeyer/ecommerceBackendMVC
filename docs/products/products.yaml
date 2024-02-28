@@ -1,0 +1,35 @@
+paths:
+  /products/{id}:
+    get:
+      summary: Get a product by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Product ID
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/Product"
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: UUID
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        category:
+          type: string
+        thumbnailUrl:
+          type: string

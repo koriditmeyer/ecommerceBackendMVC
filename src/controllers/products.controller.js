@@ -1,6 +1,7 @@
 import { productsServices } from "../services/products.services.js";
 import { extractFile } from "../middlewares/multer.js";
 import { maxPicUpload } from "../config/config.js";
+import { objectToString } from "../utils/objectToString.js";
 
 export async function getProductQuery(req, res, next) {
   const query = req.query;
@@ -22,12 +23,13 @@ export const addProduct = [
     try {
       const data = req.body;
       const files = req.files;
-      req.logger.debug("[Controller] got data to add: " + data);
-      req.logger.debug("[Controller] got files to add: " + files);
+      req.logger.debug("[Controller] got data to add: " + objectToString(data));
+      req.logger.debug("[Controller] got files to add ");
 
       const addedProduct = await productsServices.create(files, data);
       res["successfullPost"](addedProduct);
     } catch (error) {
+      console.log(error)
       next(error); // Pass any errors to the error handling middleware
     }
   },
@@ -36,7 +38,7 @@ export const addProduct = [
 export async function modifyProduct(req, res, next) {
   const updatedData = req.body;
   const id = req.params.id;
-  req.logger.debug("[Controller] for id:"+ id+" -got updated Data: " + updatedData);
+  req.logger.debug("[Controller] for id:"+ id+" -got updated Data: " + objectToString(updatedData));
   const updatedProduct = await await productsServices.updateOne(
     id,
     updatedData
@@ -56,7 +58,7 @@ export const addPictureImages = [
       const id = req.params.pid;
       const newImages = req.files;
       req.logger.debug("[Controller] got id: " + id);
-      req.logger.debug("[Controller] got new files: " + newImages);
+      req.logger.debug("[Controller] got new files");
       const updatedProduct = await await productsServices.updateImage(
         id,
         newImages

@@ -6,7 +6,7 @@
   "main": "src/main.js",
   "scripts": {
     "start": "node src/main.js",
-    "dev": "nodemon --env-file=prod.env src/main.js -e js,html,handlebars",
+    "dev": "nodemon --env-file=prod.env src/main.js -e js,html,yaml,handlebars",
     "test": "node --env-file=prod.env ./test/services/sessions.services.test.js",
     "tdd": "nodemon --env-file=prod.env ./test/services/sessions.services.test.js -e js,html,handlebars"
   },
@@ -37,6 +37,8 @@
     "passport-github2": "^0.1.12",
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
     "twilio": "^4.21.0",
     "winston": "^3.11.0"
   },

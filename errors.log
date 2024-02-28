@@ -708,3 +708,23 @@
 {"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-27T05:00:44.187Z"}
 {"level":"error","message":"c is not defined","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T05:03:49.956Z"}
 {"level":"error","message":"c is not defined","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T05:03:49.977Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-27T05:09:47.338Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-27T05:09:52.339Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-27T05:09:52.393Z"}
+{"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-02-27T05:10:16.783Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T07:21:46.146Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-27T07:22:32.910Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-27T07:23:26.501Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-27T07:23:27.174Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-27T07:23:27.724Z"}
+{"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-02-27T07:23:28.339Z"}
+{"level":"error","message":"Cannot convert object to primitive value","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T07:23:35.248Z"}
+{"level":"error","message":"Cannot convert object to primitive value","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T07:24:48.440Z"}
+{"level":"error","message":"Cannot convert object to primitive value","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T07:27:12.660Z"}
+{"level":"error","message":"Cannot convert object to primitive value","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T07:28:38.902Z"}
+{"level":"error","message":"Cannot convert object to primitive value","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T07:29:24.616Z"}
+{"level":"error","message":"Cannot convert object to primitive value","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T07:29:27.028Z"}
+{"level":"error","message":"Cannot convert object to primitive value","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T07:29:54.655Z"}
+{"level":"error","message":"Cannot convert object to primitive value","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T07:30:16.813Z"}
+{"level":"error","message":"Cannot convert object to primitive value","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T07:30:17.664Z"}
+{"level":"error","message":"Cannot convert object to primitive value","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-02-27T08:19:58.983Z"}
