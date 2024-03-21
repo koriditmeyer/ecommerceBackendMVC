@@ -65,7 +65,7 @@ async function testRegisterWithoutPasswordFail() {
   };
 
   let errorMessage;
-
+describe("api",()=>{})
   try {
     await sessionsServices.register(credentials,"local");
     throw new Error("❌ deberia haber lanzado un error pero no lo lanzó");

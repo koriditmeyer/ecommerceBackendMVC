@@ -1,7 +1,85 @@
 paths:
+  /products:
+    get:
+      summary: Get a list of products based on query parameters
+      tags:
+        - Products
+      parameters:
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          description: Limit number of products returned
+        - in: query
+          name: page
+          schema:
+            type: integer
+          description: Page number for pagination
+        - in: query
+          name: category
+          schema:
+            type: string
+          description: Filter by product category
+        - in: query
+          name: searchTerm
+          schema:
+            type: string
+          description: Search term for product titles
+        - in: query
+          name: sort
+          schema:
+            type: string
+          description: Sort order, 'asc' or 'desc'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Product'
+    post:
+      summary: Add a new product
+      tags:
+        - Products      
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                thumbnail:
+                  type: string
+                  format: binary
+                name:
+                  type: string
+                description:
+                  type: string
+                price:
+                  type: number
+                category:
+                  type: string
+      responses:
+        '201':
+          description: Product created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+      security:
+        - jwtAuth: []
   /products/{id}:
     get:
       summary: Get a product by ID
+      tags:
+        - Products      
       parameters:
         - in: path
           name: id
@@ -10,19 +88,88 @@ paths:
             type: string
           description: Product ID
       responses:
-        "200":
+        '200':
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: "#components/schemas/Product"
+                $ref: '#/components/schemas/Product'
+    put:
+      summary: Update a product by ID
+      tags:
+        - Products      
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Product ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '200':
+          description: Product updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+      security:
+        - jwtAuth: []
+    delete:
+      summary: Delete a product by ID
+      tags:
+        - Products
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Product ID
+      responses:
+        '200':
+          description: Product deleted
+      security:
+        - jwtAuth: []
+  /products/{pid}/thumbnailUrl:
+    put:
+      summary: Update product's thumbnail by ID
+      tags:
+        - Products      
+      parameters:
+        - in: path
+          name: pid
+          required: true
+          schema:
+            type: string
+          description: Product ID
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                thumbnail:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Thumbnail updated
+      security:
+        - jwtAuth: []
 components:
   schemas:
     Product:
       type: object
       properties:
         id:
-          type: UUID
+          type: string
         name:
           type: string
         description:
@@ -33,3 +180,8 @@ components:
           type: string
         thumbnailUrl:
           type: string
+  securitySchemes:
+    jwtAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

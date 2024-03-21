@@ -11,6 +11,7 @@ import { logger } from "../utils/logger/index.js";
 export let userDaoFactory;
 export let cartDaoFactory;
 export let productDaoFactory;
+export let categoryDaoFactory;
 export let purchaseDaoFactory;
 export let ticketDaoFactory;
 switch (PERSISTENCE) {
@@ -22,10 +23,12 @@ switch (PERSISTENCE) {
     const { UserDaoMongoose } = await import("./mongoose/user.dao.js");
     const { CartDaoMongoose } = await import("./mongoose/cart.dao.js");
     const { ProductDaoMongoose } = await import("./mongoose/product.dao.js");
+    const { CategoryDaoMongoose } = await import("./mongoose/category.dao.js");
     const { TicketDaoMongoose } = await import("./mongoose/ticket.dao.js");
     userDaoFactory = UserDaoMongoose;
     cartDaoFactory = CartDaoMongoose;
     productDaoFactory = ProductDaoMongoose;
+    categoryDaoFactory = CategoryDaoMongoose;
     ticketDaoFactory = TicketDaoMongoose;
     break;
   case "MEMORY":

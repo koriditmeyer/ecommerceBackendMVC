@@ -43,7 +43,9 @@ export class mongooseDao {
     logger.debug(
       `[DAO] - readMany method with criteria ${objectToString(criteria)}`
     );
-    const result = await this.#model.find(criteria).select({ _id: 0 }).lean();
+    const result = await this.#model.find(criteria)
+    // .select({ _id: 0 })
+    .lean();
     logger.info(
       `[DAO] - readMany method with result ${objectToString(result)}`
     );

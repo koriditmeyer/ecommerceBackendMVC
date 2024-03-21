@@ -5,7 +5,7 @@ import { objectToString } from "../utils/objectToString.js";
 
 export async function getProductQuery(req, res, next) {
   const query = req.query;
-  req.logger.debug("[Controller] got query to search: " +  query);
+  req.logger.debug("[Controller] got query to search: " +  objectToString(query));
   const products = await productsServices.getProductQuery(query);
   res["successfullGet"](products);
 }
@@ -15,6 +15,13 @@ export async function getProduct(req, res, next) {
   req.logger.debug("[Controller] got id to search: " + id);
   const product = await productsServices.findOne(id);
   res["successfullGet"](product);
+}
+
+export async function getDistinct(req, res, next) {
+  const {attribute,search} = req.query;
+  req.logger.debug("[Controller] got to find distinct  "+attribute+" and this search: "+search);
+  const category = await productsServices.distinct(attribute,search);
+  res["successfullGet"](category);
 }
 
 export const addProduct = [

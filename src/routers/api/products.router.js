@@ -2,6 +2,7 @@ import { Router } from "express";
 import {
   getProductQuery,
   getProduct,
+  getDistinct,
   addProduct,
   modifyProduct,
   deleteProduct,
@@ -18,10 +19,11 @@ export const productsRouter = Router();
 productsRouter.get(
   "/",
   // @ts-ignore
-  compression({ brotli: { enabled: true, zlib: {} } }),
+  // compression({ brotli: { enabled: true, zlib: {} } }),
   tryCatch(getProductQuery)
 );
 productsRouter.get("/:pid", tryCatch(getProduct));
+productsRouter.get("/distinct/query", tryCatch(getDistinct));
 productsRouter.post(
   "/",
   authenticate("jwt"),
