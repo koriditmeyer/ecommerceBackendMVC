@@ -13,6 +13,7 @@ import { logger } from "../../utils/logger/index.js";
 import { testRouter } from "./test.router.js";
 import swaggerUiExpress from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
+import { NODE_ENV } from "../../config/config.js";
 
 const specs = swaggerJSDoc({
   definition: {
@@ -32,7 +33,13 @@ export const apiRouter = Router();
 apiRouter.use(handlerSuccess);
 
 // * MIDDLEWARE AT ROUTER LEVEL
-apiRouter.use("/docs", swaggerUiExpress.serve, swaggerUiExpress.setup(specs));
+if(NODE_ENV === "production"){
+  apiRouter.use('/docs', (req, res, next) => {
+    res.status(404).send("Not Found");
+  });
+} else{
+  apiRouter.use("/docs", swaggerUiExpress.serve, swaggerUiExpress.setup(specs));
+}
 apiRouter.use("/products", productsRouter);
 apiRouter.use("/category", categoryRouter);
 apiRouter.use("/carts", cartRouter);

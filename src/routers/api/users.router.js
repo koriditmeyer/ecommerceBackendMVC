@@ -5,7 +5,10 @@ import {
   findUser,
   findUsers,
   resetPwdUser,
-  updateUser
+  updateUser,
+  // addDocuments,
+  addPictureImages,
+  // userPremium
 } from "../../controllers/users.controller.js";
 import tryCatch from "../../middlewares/trycatch.js";
 
@@ -31,9 +34,30 @@ usersRouter.put(
   tryCatch(updateUser)
 );
 
+usersRouter.put(
+  "/:id/thumbnailUrl",
+  authenticate("jwt"),
+  allowedRolesCookie(["user","admin"]),
+  addPictureImages
+);
+
 usersRouter.get(
   "/:id",
   authenticate("jwt"),
   allowedRolesCookie(["admin"]),
   tryCatch(findUsers)
 );
+
+// usersRouter.post(
+//   "/:id/documents",
+//   authenticate("jwt"),
+//   allowedRolesCookie(["user,admin"]),
+//   addDocuments
+// );
+
+// usersRouter.put(
+//   "/premium/:id",
+//   authenticate("jwt"),
+//   allowedRolesCookie(["user,admin"]),
+//   tryCatch(userPremium)
+// );

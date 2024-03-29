@@ -1,0 +1,26 @@
+components:
+  securitySchemes:
+    jwtAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        For accessing the protected API endpoints, you must first authenticate to obtain a JWT token.
+
+        You can obtain a token by using the `/api/sessions/login` endpoint with your user credentials. Here's an example request:
+
+        ```
+        POST /authenticate
+        Content-Type: application/json
+
+        {
+          "username": "user@example.com",
+          "password": "yourpassword"
+        }
+        ```
+
+        Use the obtained token as a Bearer token in the Authorization header of your requests:
+
+        ```
+        Authorization: Bearer <your_jwt_token_here>
+        ```

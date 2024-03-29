@@ -128,30 +128,31 @@ export function clearSession(req, res, next) {
 }
 
 //use passport jwt strategy to confirm logged in User
-passport.use(
-  "jwt",
-  new JwtStrategy(
-    {
-      jwtFromRequest: ExtractJwt.fromExtractors([
-        function (req) {
-          let token = null;
-          if (req?.signedCookies) {
-            token = req.signedCookies[`${JWT_COOKIE_NAME}`];
-            req.logger.info(
-              `[Passport] Enter Passport JWT, Extracted Token:${token}`
-            ); // Log the extracted token
-          }
-          return token;
-        },
-      ]),
-      // @ts-ignore
-      secretOrKey: JWT_PRIVATE_KEY,
-    },
-    function loginUser(user, done) {
-      done(null, user);
-    }
-  )
-);
+  passport.use(
+    "jwt",  
+    new JwtStrategy(
+      {
+        jwtFromRequest: ExtractJwt.fromExtractors([
+          function (req) {
+            let token = null;
+            if (req?.signedCookies) {
+              token = req.signedCookies[`${JWT_COOKIE_NAME}`];
+              req.logger.info(
+                `[Passport] Enter Passport JWT, Extracted Token:${token}`
+              ); // Log the extracted token
+            }
+            return token;
+          },
+        ]),
+        // @ts-ignore
+        secretOrKey: JWT_PRIVATE_KEY,
+      },
+      function loginUser(user, done) {
+        return done(null, user);
+      }
+    )
+  );
+
 
 // Passport Github Strategy for Registering Users
 import { Strategy as GithubStrategy } from "passport-github2";

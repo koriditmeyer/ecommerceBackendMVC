@@ -1,0 +1,25 @@
+components:
+  requestBodies:
+    UpdateUser:
+      type: object
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        age:
+          type: integer
+          example: 32
+        phone:
+          type: string
+          example: "+33628562724"
+        address:
+          type: string
+        city_locality:
+          type: string
+        postal_code:
+          type: string
+        country_code:
+          type: string
+
+

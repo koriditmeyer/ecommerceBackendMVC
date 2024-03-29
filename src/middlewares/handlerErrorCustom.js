@@ -1,6 +1,8 @@
 import { ErrorTypes } from "../models/errors/errorTypes.js";
 
 export function handlerErrorCustom(error, req, res, next) {
+  console.log("errr type: "+error.type)
+  // console.log(ErrorTypes.DB.INTERNAL_ERROR)
   let statusCode; //= 500; // Default to internal server error
   if (error.type === ErrorTypes.AUTH_ERROR) {
     statusCode = 401; // Unauthorized
@@ -12,9 +14,11 @@ export function handlerErrorCustom(error, req, res, next) {
     statusCode = 400; // Bad request
   } else if (error.type === ErrorTypes.REGISTRATION_ERROR) {
     statusCode = 400; // Bad request
-  } else if (error.type === ErrorTypes.DB.VALIDATION_ERROR) {
+  } else if (error.type === ErrorTypes.UNSUPORTED_FILE_ERROR) {
     statusCode = 400; // Bad request
   } else if (error.type === ErrorTypes.DB.INCORRECT_FIELD) {
+    statusCode = 400; // Bad request
+  } else if (error.type === ErrorTypes.DB.VALIDATION_ERROR) {
     statusCode = 400; // Bad request
   } else if (error.type === ErrorTypes.DB.DUPLICATE_ERROR) {
     statusCode = 409; // Confilct
@@ -27,6 +31,11 @@ export function handlerErrorCustom(error, req, res, next) {
     status: "[Custom]",
     statusCode: statusCode,
     message: error.message,
+  });
+  req.logger.silly({
+    status: "[Custom]",
+    statusCode: statusCode,
+    message: error,
   });
   res.status(statusCode);
   res.json({ status: "error", message: error.message });

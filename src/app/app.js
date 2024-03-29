@@ -48,6 +48,6 @@ app.use("/static", express.static("./static")); // Incorporated middleware - ima
 app.use(function (err, req, res, next) {
   res.json({
     status: "error",
-    description: err.message,
+    description: "[END] "+err.message,
   });
 });

@@ -1,0 +1,111 @@
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - _id
+        - first_name
+        - last_name
+        - email
+        - password
+      properties:
+        _id:
+          type: string
+          default: 'Dynamically generated upon creation using the newId function'
+          description: Unique identifier for the user.
+        first_name:
+          type: string
+          description: The user's first name.
+          required: true
+        last_name:
+          type: string
+          description: The user's last name.
+          required: true
+        token:
+          type: string
+          description: Authentication token for the user.
+        verified:
+          type: boolean
+          default: false
+          description: Indicates whether the user's email address has been verified.
+        tokenExpiry:
+          type: string
+          format: date-time
+          description: Expiry date of the user's authentication token.
+        email:
+          type: string
+          description: The user's email address. Must be unique.
+          required: true
+        age:
+          type: integer
+          description: The user's age.
+        password:
+          type: string
+          description: The user's password.
+          required: true
+        phone:
+          type: string
+          description: The user's phone number.
+        address:
+          type: string
+          description: The user's address.
+        city_locality:
+          type: string
+          description: The user's city or locality.
+        postal_code:
+          type: string
+          description: The user's postal code.
+        country_code:
+          type: string
+          description: The user's country code.
+        date:
+          type: string
+          format: date-time
+          default: 'The current date and time'
+          description: The date and time when the user account was created.
+        roles:
+          type: array
+          items:
+            type: string
+          default: ['user']
+          description: Roles assigned to the user.
+        cartId:
+          type: string
+          description: Reference to the user's cart.
+        provider:
+          type: string
+          default: 'local'
+          description: Authentication provider for the user.
+        providerId:
+          type: string
+          description: Provider specific identifier for the user.
+        profilePhoto:
+          type: array
+          items:
+            type: string
+          Default: ["static/img/defaults/profileDefault.png"]
+          description: URL to the user's profile photo.
+      example:
+        _id: 5f4d4bcf8f8f8f8f8f8f8f8
+        first_name: John
+        last_name: Doe
+        token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        verified: true
+        tokenExpiry: "2024-04-03T12:34:56.789Z"
+        email: johndoe@example.com
+        age: 30
+        password: hashedpassword123
+        phone: +1234567890
+        address: "1234 Elm Street"
+        city_locality: "Springfield"
+        postal_code: "12345"
+        country_code: "US"
+        date: "2023-03-26T14:48:00.000Z"
+        roles:
+          - "user"
+        cartId: "5fcf4d4bcf8f8f8f8f8f8f8"
+        provider: "local"
+        providerId: "local_johndoe"
+        profilePhoto: ["https://example.com/profiles/johndoe.jpg"]
+
+

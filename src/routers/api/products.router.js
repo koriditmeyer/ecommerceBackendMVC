@@ -24,12 +24,12 @@ productsRouter.get(
 );
 productsRouter.get("/:pid", tryCatch(getProduct));
 productsRouter.get("/distinct/query", tryCatch(getDistinct));
-productsRouter.post(
-  "/",
-  authenticate("jwt"),
-  allowedRolesCookie(["admin"]),
-  addProduct
-);
+// productsRouter.post(
+//   "/",
+//   authenticate("jwt"),
+//   allowedRolesCookie(["admin"]),
+//   addProduct
+// );
 productsRouter.put(
   "/:id",
   authenticate("jwt"),
@@ -42,9 +42,9 @@ productsRouter.delete(
   allowedRolesCookie(["admin"]),
   tryCatch(deleteProduct)
 );
-productsRouter.put(
-  "/:pid/thumbnailUrl",
-  authenticate("jwt"),
-  allowedRolesCookie(["admin"]),
-  addPictureImages
-);
+// productsRouter.put(
+//   "/:pid/thumbnailUrl",
+//   authenticate("jwt"),
+//   allowedRolesCookie(["admin"]),
+//   addPictureImages
+// );

@@ -7,6 +7,7 @@ export class ErrorTypes {
   static INCORRECT_DATA_ERROR = 6;
   static REGISTRATION_ERROR = 7
   static VERIFICATION_ERROR = 12
+  static UNSUPORTED_FILE_ERROR = 13
   static DB = {
     VALIDATION_ERROR: 8,
     DUPLICATE_ERROR: 9,

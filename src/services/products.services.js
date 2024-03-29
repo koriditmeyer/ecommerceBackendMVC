@@ -191,9 +191,9 @@ export class ProductsServices {
 
   async deleteProduct(id) {
     logger.debug(`[services] deleteProduct method got: id:${id}`);
-    const deletedProduct = await this.productsRepository.deleteOne({ _id: id });
+    let deletedProduct = await this.productsRepository.deleteOne({ _id: id });
     logger.info(
-      `[services] findOne method return deletd product: ${objectToString(
+      `[services] findOne method return deleted product: ${objectToString(
         deletedProduct
       )}`
     );

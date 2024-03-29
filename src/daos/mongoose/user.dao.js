@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema(
     cartId: { type: String, ref: "Cart" },
     provider: { type: String, default: "local" },
     providerId: String,
-    profilePhoto: String,
+    profilePhoto: { type: [String], default: ["img/defaults/profileDefault.webp"] },
   },
   { versionKey: false, strict: "throw" }
 );

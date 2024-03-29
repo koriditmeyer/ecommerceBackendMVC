@@ -1,0 +1,122 @@
+components:
+  schemas:
+    Product:
+      type: object
+      required:
+        - _id
+        - title
+        - description
+        - code
+        - price
+        - stock
+        - category
+      properties:
+        _id:
+          Type: string
+          Description: Unique identifier for the product.
+          Default: Dynamically generated upon creation using the newId function.
+        title:
+          Type: string
+          Description: The title or name of the product.
+          Index: true
+          Required: true
+        description:
+          type: array
+          items:
+            oneOf:
+              - type: object
+                properties:
+                  features:
+                    type: object
+                    additionalProperties: 
+                      type: string
+              - type: object
+                properties:
+                  information:
+                    type: array
+                    items:
+                      type: string
+              - type: object
+                properties:
+                  description:
+                    type: array
+                    items:
+                      type: string
+          Description: Detailed description of the product.
+          Required: true
+        brand:
+          Type: string
+          Description: The brand associated with the product.
+        code:
+          Type: string
+          Description: A unique code identifying the product.
+          Required: true
+          Unique: true
+        avgRating:
+          Type: number
+          Description: The average rating of the product based on user reviews.
+        ratings:
+          Type: number
+          Description: The total number of ratings the product has received.
+        price:
+          Type: number
+          Description: The current price of the product.
+          Required: true
+        oldPrice:
+          Type: number
+          Description: The previous price of the product for reference.
+        status:
+          Type: string
+          Description: The availability status of the product.
+          Default: true
+        stock:
+          Type: number
+          Description: The quantity of the product available in stock.
+          Required: true
+        category:
+          Type: number
+          Description: A numeric code representing the category of the product.
+          Required: true
+        badge:
+          Type: string
+          Description: A label or badge associated with the product for promotional purposes.
+        productURL:
+          Type: string
+          Description: A URL pointing to the product's page or additional details.
+        boughtInLastMonth:
+          Type: number
+          Description: The total quantity of this product bought in the last month.
+        thumbnail:
+          type: array
+          items:
+            type: string
+          Description: URLs to thumbnail images of the product.
+          Default: ["static/img/defaults/thumbnailDefault.png"]
+      example:
+        _id: 3f4d5g6h7j8k9l0
+        title: Eco-friendly Reusable Water Bottle
+        attribute: BPA-free
+        description: [
+          features: {
+            Item Weight: "11.1 Pounds",
+            Manufacturer: "SwissGear",
+            ASIN: "B014TMV5YE"
+          },
+          information: ["BPA FREE - Our plastic water bottles are BPA free, Made with durable plastic. Our reusable water bottles bulk are safe for kids and adults."],
+          description: ["A durable eco-friendly water bottle designed for daily use."]]
+        brand: EcoBottle
+        code: ECO12345
+        avgRating: 4.5
+        ratings: 150
+        price: 19.99
+        oldPrice: 24.99
+        status: true
+        stock: 100
+        category: 200
+        badge: Bestseller
+        productURL: https://www.example.com/eco-bottle
+        boughtInLastMonth: 200
+        thumbnail: [
+          "https://www.example.com/images/eco-bottle-front.jpg",
+          "https://www.example.com/images/eco-bottle-side.jpg"
+        ]

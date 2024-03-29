@@ -56,10 +56,10 @@ export class GenericRepository {
       `[Repository] - updateOne method with criteria ${objectToString(criteria)}, new data ${objectToString(newData)}`
     );
     const result = await this.#dao.updateOne(criteria, newData);
-    if (result.matchedCount === 0) {
+    if (!result) {
       throw new NotFoundError();
     }
-    if (result.modifiedCount === 0) {
+    if (result?.modifiedCount === 0) {
       throw new NotModifiedError();
     }
     logger.info(
@@ -73,10 +73,10 @@ export class GenericRepository {
       `[Repository] - updateMany method with criteria ${objectToString(criteria)}, new data ${objectToString(newData)}`
     );
     const result = await this.#dao.updateMany(criteria, newData);
-    if (result.matchedCount === 0) {
+    if (!result) {
       throw new NotFoundError();
     }
-    if (result.modifiedCount === 0) {
+    if (result?.modifiedCount === 0) {
       throw new NotModifiedError();
     }
     logger.info(
@@ -90,6 +90,7 @@ export class GenericRepository {
       `[Repository] - deleteOne method with criteria ${objectToString(criteria)}`
     );
     const deleted = await this.#dao.deleteOne(criteria);
+    if (!deleted) throw new NotFoundError();
     logger.info(
       `[Repository] - deleteOne method with deleted data ${objectToString(deleted)}`
     );

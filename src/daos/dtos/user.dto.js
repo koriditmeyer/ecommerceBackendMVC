@@ -12,7 +12,8 @@ export class UserResponseDTO {
     (this.verified = user.verified),
     (this.city_locality = user.city_locality),
     (this.postal_code = user.postal_code),
-    (this.country_code = user.country_code)
+    (this.country_code = user.country_code),
+    (this.profilePhoto = user.profilePhoto)
   }
 
     toCookie() {

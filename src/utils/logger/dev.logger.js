@@ -1,4 +1,4 @@
-import  { createLogger, format, transports, addColors } from "winston";
+import { createLogger, format, transports, addColors } from "winston";
 const { combine, timestamp, label, printf } = format;
 
 // Define custom log levels
@@ -9,7 +9,8 @@ const customLevels = {
     warning: 2,
     info: 3,
     http: 4,
-    debug: 5, // Least important
+    debug: 5,
+    silly: 6, // Least important
   },
   colors: {
     fatal: "red",
@@ -28,7 +29,7 @@ const devLogger = () => {
 
   return createLogger({
     levels: customLevels.levels, // Use custom levels
-    level: "debug",
+    level: "silly",
     // format: winston.format.simple(),
     format: combine(
       format.colorize(),

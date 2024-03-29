@@ -1,7 +1,8 @@
 import { productsServices } from "../services/products.services.js";
-import { extractFile } from "../middlewares/multer.js";
+// import { extractFile } from "../middlewares/multer.js";
 import { maxPicUpload } from "../config/config.js";
 import { objectToString } from "../utils/objectToString.js";
+import { removeEmptyFields } from "../middlewares/removeEmptyFields.js";
 
 export async function getProductQuery(req, res, next) {
   const query = req.query;
@@ -25,7 +26,8 @@ export async function getDistinct(req, res, next) {
 }
 
 export const addProduct = [
-  extractFile("thumbnail", maxPicUpload),
+  // extractFile("img/products","thumbnail", maxPicUpload,['image/jpeg', 'image/png', 'image/webp']),
+  removeEmptyFields,
   async (req, res, next) => {
     try {
       const data = req.body;
@@ -59,7 +61,7 @@ export async function deleteProduct(req, res, next) {
   res["successfullDelete"](deletedProduct);
 }
 export const addPictureImages = [
-  extractFile("thumbnail", maxPicUpload),
+  // extractFile("img/products","thumbnail", maxPicUpload,['image/jpeg', 'image/png', 'image/webp']),
   async (req, res, next) => {
     try {
       const id = req.params.pid;

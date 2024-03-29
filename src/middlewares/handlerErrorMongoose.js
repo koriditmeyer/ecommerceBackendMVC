@@ -7,6 +7,8 @@ import {
 } from "../models/errors/dB.error.js";
 
 export function handlerErrorMongoose(err, req, res, next) {
+  req.logger.silly(`[Mongoose] - `+err );
+  // console.log(err.code)
   // ValidationError handling
   if (err instanceof mongoose.Error.ValidationError) {
     const status= "Validation failed"
@@ -22,7 +24,7 @@ export function handlerErrorMongoose(err, req, res, next) {
   // CastError handling
   else if (err instanceof mongoose.Error.CastError) {
     const status= "CastError"
-    const message = `Invalid ${err.kind} value for path '${err.path}': '${err.value}'`;
+    const message = `[Mongoose] Invalid ${err.kind} value for path '${err.path}': '${err.value}'`;
     req.logger.debug({ status: `[Mongoose] - ${status}`  , message });
     next( new dBInternalError())
   }
@@ -38,7 +40,7 @@ export function handlerErrorMongoose(err, req, res, next) {
     // VersionError handling
   else if (err instanceof mongoose.Error.VersionError) {
     const status= "VersionError"
-    const message= "Document version conflict"
+    const message= "[Mongoose] Document version conflict"
     req.logger.debug({ status: `[Mongoose] - ${status}` , message });
     next( new dBInternalError())
   }
@@ -51,7 +53,7 @@ export function handlerErrorMongoose(err, req, res, next) {
       value=value[prop]
     }
     const status= "NotFoundError"
-    const message = `Duplicate field value: ${key}. Please use another value than ${value}!`;
+    const message = `[Mongoose] Duplicate field value: ${key}. Please use another value than ${value}!`;
     req.logger.debug({status: `[Mongoose] - ${status}`  ,statusCode: err.code, message });
     next( new dBDuplicateKeyError(key))
   }
@@ -59,7 +61,7 @@ export function handlerErrorMongoose(err, req, res, next) {
   // DocumentNotFoundError handling (custom or logic-based handling)
   else if (err.message === "DocumentNotFoundError") {
     const status= "NotFoundError"
-    const message= "Document version conflict"
+    const message= "[Mongoose] Document version conflict"
     req.logger.debug({ status: `[Mongoose] - ${status}`   ,statusCode: err.code, message });
     next( new dBInternalError())
   }

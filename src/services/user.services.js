@@ -76,7 +76,8 @@ export class UserServices {
     logger.debug(
       `[services] resetPassword method got: user id:${id}, and new password ${password}`
     );
-    if (!password) {
+    let myRegxp= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{7,}$/  // password has a special character, a number, uppercase, lowecase and more than 6 characters
+    if (!password || !myRegxp.test(password)) {
       throw new IncorrectDataError(password);
     }
     //! encrypt password!
@@ -126,6 +127,27 @@ export class UserServices {
     );
     return userDTO;
   }
+
+  async updateImage(id, newImages) {
+    logger.debug(`[services] updateImage method got: id:${id}`);
+    // console.log(newImages)
+    if (!newImages) {
+      throw new Error(`You need to upload some images`);
+    }
+    newImages = { profilePhoto: newImages.map((e) => e.path) };
+    // console.log(newImages)
+    const modified = await this.usersRepository.updateOne(
+      { _id: id },
+      { $set: newImages }
+    );
+    const userDTO = toPojo(new UserResponseDTO(modified));
+    logger.info(`[services] updateImage method return modified: ${userDTO}`);
+    return userDTO;
+  }
+
+  
 }
+
+
 
 export const userServices = new UserServices(usersRepository, cartRepository);

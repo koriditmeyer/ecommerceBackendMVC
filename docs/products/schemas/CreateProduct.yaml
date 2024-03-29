@@ -1,0 +1,100 @@
+components:
+  requestBodies:
+    CreateProduct:
+      type: object
+      required:
+        - title
+        - description
+        - code
+        - price
+        - stock
+        - category
+      properties:
+        title:
+          Type: string
+          Description: The title or name of the product.
+          example: Example Product
+          Required: true
+        description:
+          type: array
+          items:
+            oneOf:
+              - type: object
+                properties:
+                  features:
+                    type: object
+                    additionalProperties: 
+                      type: string
+                    example:
+                      Item Weight: "11.1 Pounds"
+                      Manufacturer: "SwissGear"
+                      ASIN: "B014TMV5YE"
+              - type: object
+                properties:
+                  information:
+                    type: array
+                    items:
+                      type: string
+                    example:
+                      - "BPA FREE - Our plastic water bottles are BPA free, made with durable plastic."
+              - type: object
+                properties:
+                  description:
+                    type: array
+                    items:
+                      type: string
+                    example:
+                      - "A durable eco-friendly water bottle designed for daily use."
+          Description: Detailed description of the product.
+          Required: true
+        brand:
+          Type: string
+          Description: The brand associated with the product.
+        code:
+          Type: string
+          Description: A unique code identifying the product.
+          Required: true
+          Unique: true
+          example: codeexample
+        avgRating:
+          Type: number
+          Description: The average rating of the product based on user reviews.
+        ratings:
+          Type: number
+          Description: The total number of ratings the product has received.
+        price:
+          Type: number
+          Description: The current price of the product.
+          Required: true
+          example: 19.99
+        oldPrice:
+          Type: number
+          Description: The previous price of the product for reference.
+        status:
+          Type: string
+          Description: The availability status of the product.
+        stock:
+          Type: number
+          Description: The quantity of the product available in stock.
+          Required: true
+          example: 25
+        category:
+          Type: number
+          Description: A numeric code representing the category of the product.
+          Required: true
+          example: 200
+        badge:
+          Type: string
+          Description: A label or badge associated with the product for promotional purposes.
+        productURL:
+          Type: string
+          Description: A URL pointing to the product's page or additional details.
+        boughtInLastMonth:
+          Type: number
+          Description: The total quantity of this product bought in the last month.
+        thumbnail:
+          type: array
+          items:
+            type: string
+            format: binary
+          Description: URLs to thumbnail images of the product.
