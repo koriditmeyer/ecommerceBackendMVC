@@ -72,13 +72,13 @@ paths:
                   format: password
                   required: true
                   example: 1bC45@7
-                  description: >
-                    The new password. Must meet the following criteria:
-                    - Contains at least one special character
-                    - Contains at least one number
-                    - Contains at least one uppercase letter
-                    - Contains at least one lowercase letter
-                    - Is more than 6 characters long
+      description: >
+        The new password. Must meet the following criteria:
+        - Contains at least one special character
+        - Contains at least one number
+        - Contains at least one uppercase letter
+        - Contains at least one lowercase letter
+        - Is more than 6 characters long
       responses:
         '200':
           description: Password reset successfully
@@ -135,9 +135,10 @@ paths:
 
   /api/users/current:
     put:
-      summary: "Update the current authenticated user's information. Allowed field to be modified are: first_name,last_name,age,phone,address,city_locality,postal_code,country_code"
+      summary: "Update the current authenticated user's information."
       tags:
         - Users
+      description: "Allowed fields to be modified are: first_name, last_name, age, phone, address, city_locality, postal_code, country_code"
       requestBody:
         required: true
         content:
@@ -292,7 +293,167 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Users'
+                $ref: '#/components/schemas/User'
+        '400':
+          description: "Error: Bad Request"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: "Error: Unauthorized"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string 
+        '403':
+          description: "Error: Forbidden"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string 
+        '404':
+          description: "Error: Not Found"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: "Error: Internal Server Error"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string  
+  /api/users/{id}/documents:
+    put:
+      summary: Update user's profile documents by ID
+      tags:
+        - Users      
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: User ID
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                documents:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+      responses:
+        '200':
+          description: Documents updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: "Error: Bad Request"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: "Error: Unauthorized"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string 
+        '403':
+          description: "Error: Forbidden"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string 
+        '404':
+          description: "Error: Not Found"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: "Error: Internal Server Error"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string  
+  /api/users/premium/{id}:
+    put:
+      summary: Add Premium role to user's role by ID
+      tags:
+        - Users      
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: User ID
+      responses:
+        '200':
+          description: Roles updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
         '401':
           description: "Error: Unauthorized"
           content:

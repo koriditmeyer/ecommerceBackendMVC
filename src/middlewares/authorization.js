@@ -27,7 +27,7 @@ export function allowedRolesDB(requiredRoles) {
     try {
       //  user's ID
       const user = await usersRepository.findOne({_id:req.user._id});
-      console.log(user)
+      // console.log(user)
       if (!req.user.roles.some(role => requiredRoles.includes(role))) {
         return next(new AuthorizationError());
       }
@@ -42,7 +42,7 @@ export async function allowCartmodification(req, res, next) {
     try {
       const cid = req.params.cid;
       const id = req.user._id;
-      console.log(cid,id)
+      // console.log(cid,id)
       const cart = await userServices.verifyUserCart(cid, id);
       next();
     } catch (error) {

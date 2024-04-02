@@ -1,7 +1,7 @@
 import { ErrorTypes } from "../models/errors/errorTypes.js";
 
 export function handlerErrorCustom(error, req, res, next) {
-  console.log("errr type: "+error.type)
+  // console.log("errr type: "+error.type)
   // console.log(ErrorTypes.DB.INTERNAL_ERROR)
   let statusCode; //= 500; // Default to internal server error
   if (error.type === ErrorTypes.AUTH_ERROR) {

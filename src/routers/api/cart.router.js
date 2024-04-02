@@ -36,13 +36,14 @@ cartRouter.post(
 cartRouter.put(
   "/:cid",
   authenticate("jwt"),
-  allowedRolesCookie(["user"]),
+  allowedRolesCookie(["admin"]),
   tryCatch(updateCart)
 );
 cartRouter.delete(
   "/:cid/product/:pid",
   authenticate("jwt"),
   allowedRolesCookie(["user","admin"]),
+  allowCartmodification,
   tryCatch(removeItemsCart)
 );
 
@@ -50,6 +51,7 @@ cartRouter.delete(
   "/:cid",
   authenticate("jwt"),
   allowedRolesCookie(["user","admin"]),
+  allowCartmodification,
   tryCatch(clearCart)
 );
 

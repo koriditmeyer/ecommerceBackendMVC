@@ -76,7 +76,7 @@ export class UserServices {
     logger.debug(
       `[services] resetPassword method got: user id:${id}, and new password ${password}`
     );
-    let myRegxp= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{7,}$/  // password has a special character, a number, uppercase, lowecase and more than 6 characters
+    let myRegxp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{7,}$/; // password has a special character, a number, uppercase, lowecase and more than 6 characters
     if (!password || !myRegxp.test(password)) {
       throw new IncorrectDataError(password);
     }
@@ -122,9 +122,7 @@ export class UserServices {
     );
     // For security reasons we want minimum things from user to initiate session
     const userDTO = toPojo(new UserResponseDTO(updatedUser));
-    logger.info(
-      `[services] updateUser method return updated User: ${userDTO}`
-    );
+    logger.info(`[services] updateUser method return updated User: ${userDTO}`);
     return userDTO;
   }
 
@@ -145,9 +143,69 @@ export class UserServices {
     return userDTO;
   }
 
-  
+  async updateDocuments(id, newDocuments) {
+    logger.debug(`[services] updateDocuments method got: id:${id}`);
+    // console.log(newImages)
+    if (!newDocuments) {
+      throw new Error(`You need to upload some documents`);
+    }
+    newDocuments = {
+      documents: newDocuments.map((e) => ({
+        name: e.originalname,
+        reference: e.path,
+      })),
+    };
+    // console.log(newImages)
+    // update documents ref
+    let modified = await this.usersRepository.updateOne(
+      { _id: id },
+      { $set: newDocuments }
+    );
+    // Update user status
+    if (modified.documents.length > 0) {
+      modified = await this.usersRepository.updateOne(
+        { _id: id },
+        { $set: { status: "PendingDocumentsValidation" } }
+      );
+    }
+    console.log(modified);
+    const userDTO = toPojo(new UserResponseDTO(modified));
+    logger.info(
+      `[services] updateDocuments method return modified: ${userDTO}`
+    );
+    return userDTO;
+  }
+
+  async userPremium(id) {
+    logger.debug(`[services] userPremium method got: id:${id}`);
+    const roleToAdd = "premium";
+    //check if documents are there
+    let user = await this.findOne(id);
+    if (user.documents.length !== 3) {
+      throw new Error(`You need to upload 3 documents`);
+    }
+    //check if the user is already premium
+    if (user.roles.includes(roleToAdd)) {
+      throw new Error(`User already ${roleToAdd}`);
+    }
+    // Update user role
+    user.roles.push(roleToAdd);
+    let roles = user.roles;
+    let modified = await this.usersRepository.updateOne(
+      { _id: id },
+      { $set: { roles: roles } }
+    );
+    // Update user status
+    if (modified.documents.length > 0) {
+      modified = await this.usersRepository.updateOne(
+        { _id: id },
+        { $set: { status: "" } }
+      );
+    }
+    const userDTO = toPojo(new UserResponseDTO(modified));
+    logger.info(`[services] userPremium method return modified: ${userDTO}`);
+    return userDTO;
+  }
 }
-
-
 
 export const userServices = new UserServices(usersRepository, cartRepository);

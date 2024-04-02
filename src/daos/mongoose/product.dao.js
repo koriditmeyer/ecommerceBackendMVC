@@ -10,7 +10,7 @@ const productSchema = new mongoose.Schema(
     _id: { type: String, default: newId, required: true },
     title: { type: String, index: true, required: true },
     attribute: { type: String },
-    description: { type: String, required: true },
+    description: { type: Object, required: true },
     brand: { type: String },
     code: { type: String, required: true, unique: true },
     avgRating: { type: Number },

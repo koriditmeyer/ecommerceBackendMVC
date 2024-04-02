@@ -1,0 +1,35 @@
+components:
+  schemas:
+    Cart:
+      type: object
+      required:
+        - _id
+        - products
+      properties:
+        _id:
+          type: string
+          description: Unique identifier for the cart, generated automatically.
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              product:
+                type: string
+                description: Unique identifier of the product.
+              quantity:
+                type: number
+                description: Quantity of the product in the cart.
+          description: List of products in the cart.
+      example:
+        _id: "62ef47c7e4b0a591b6e25b5c"
+        products: [
+          {
+            product: "62ecb567e4a099b54a1234",
+            quantity: 2
+          },
+          {
+            product: "62edb678e4a099b54a5678",
+            quantity: 1
+          }
+        ]

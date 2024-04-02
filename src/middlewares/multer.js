@@ -22,7 +22,7 @@ function checkFileType(fileTypes) {
 }
 
 // MULTER CONFIG
-function dynamicStorage(folder, fileTypes, maxSize) {
+function dynamicStorage(folder, fileTypes, maxSize,maxCount) {
   const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       const destPath = `./static/${folder}`;
@@ -40,13 +40,13 @@ function dynamicStorage(folder, fileTypes, maxSize) {
   return multer({
     storage: storage,
     fileFilter: fileFilter,
-    limits: { fileSize: 1024 * 1024 * maxSize },
+    limits: { fileSize: 1024 * 1024 * maxSize, files:maxCount },
   });
 }
 
 export function uploadFile(folder, fileTypes,maxSize,fieldname,maxCount) {
   return (req, res, next) => {
-    const upload = dynamicStorage(folder, fileTypes,maxSize).array(fieldname, maxCount);
+    const upload = dynamicStorage(folder, fileTypes,maxSize,maxCount).array(fieldname);
     upload(req, res, function (err) {
       if (err instanceof multer.MulterError) {
         // A Multer error occurred when uploading.

@@ -9,7 +9,8 @@ const customLevels = {
     warning: 2,
     info: 3,
     http: 4,
-    debug: 5, // Least important
+    debug: 5, 
+    silly: 6, // Least important
   },
   colors: {
     fatal: 'red',
@@ -25,7 +26,7 @@ const customLevels = {
 const productionLogger = () => {
   return createLogger({
     levels: customLevels.levels, // Use custom levels
-    level: "debug",  // Set the lowest level of logs I want to see
+    level: "warning",  // Set the lowest level of logs I want to see
     // format: winston.format.simple(),
     format: combine(
       timestamp(),

@@ -3,6 +3,7 @@ import { productsServices } from "../services/products.services.js";
 import { maxPicUpload } from "../config/config.js";
 import { objectToString } from "../utils/objectToString.js";
 import { removeEmptyFields } from "../middlewares/removeEmptyFields.js";
+import { uploadFile } from "../middlewares/multer.js";
 
 export async function getProductQuery(req, res, next) {
   const query = req.query;
@@ -26,11 +27,18 @@ export async function getDistinct(req, res, next) {
 }
 
 export const addProduct = [
-  // extractFile("img/products","thumbnail", maxPicUpload,['image/jpeg', 'image/png', 'image/webp']),
+  uploadFile(
+    "img/products",
+    ["image/jpeg", "image/png", "image/webp"],
+    10, //in Mb
+    "thumbnail",
+    maxPicUpload
+  ),
   removeEmptyFields,
   async (req, res, next) => {
     try {
       const data = req.body;
+      console.log(data)
       const files = req.files;
       req.logger.debug("[Controller] got data to add: " + objectToString(data));
       req.logger.debug("[Controller] got files to add ");
@@ -38,7 +46,7 @@ export const addProduct = [
       const addedProduct = await productsServices.create(files, data);
       res["successfullPost"](addedProduct);
     } catch (error) {
-      console.log(error)
+      // console.log(error)
       next(error); // Pass any errors to the error handling middleware
     }
   },
@@ -61,7 +69,13 @@ export async function deleteProduct(req, res, next) {
   res["successfullDelete"](deletedProduct);
 }
 export const addPictureImages = [
-  // extractFile("img/products","thumbnail", maxPicUpload,['image/jpeg', 'image/png', 'image/webp']),
+  uploadFile(
+    "img/products",
+    ["image/jpeg", "image/png", "image/webp"],
+    10, //in Mb
+    "thumbnail",
+    maxPicUpload
+  ),
   async (req, res, next) => {
     try {
       const id = req.params.pid;

@@ -33,9 +33,9 @@ export const apiRouter = Router();
 apiRouter.use(handlerSuccess);
 
 // * MIDDLEWARE AT ROUTER LEVEL
-if(NODE_ENV === "production"){
+if(NODE_ENV === "producion"){
   apiRouter.use('/docs', (req, res, next) => {
-    res.status(404).send("Not Found");
+    res.status(404).send("Swagger is not available in production");
   });
 } else{
   apiRouter.use("/docs", swaggerUiExpress.serve, swaggerUiExpress.setup(specs));

@@ -51,7 +51,11 @@ export class CartServices {
       );
       cart = await this.cartRepository.updateOne(
         { _id: cid },
-        { $push: { products: { product: pid, quantity: 1 } } }
+        {
+          $push: {
+            products: { product: pid, quantity: quantity ? quantity : 1 },
+          },
+        }
       );
     } else {
       logger.debug(`[services] addToCart - Item exist, updating quantity`);
@@ -60,9 +64,9 @@ export class CartServices {
         { _id: cid, "products.product": pid },
         { $set: { "products.$.quantity": quantity } }
       );
-      logger.info(`[services] addToCart method return cart: ${cart}`);
-      return cart;
     }
+    logger.info(`[services] addToCart method return cart: ${cart}`);
+    return cart;
   }
 
   async removeItemsCart(cid, pid) {
@@ -120,15 +124,25 @@ export class CartServices {
 
   async purchaseItemsCart(cid) {
     logger.debug(`[services] purchaseItemsCart method  got: cid:${cid}`);
-    let ticketData = [];
     let RemainingCartData = [];
     // Check if cart exist
     let cart = await this.cartRepository.findOne({ _id: cid });
     // Check if the cart is not empty
-    if (!cart.products.length) {
-      throw new Error(`Cart is empty`);
+    if (!cart.products.length) throw new Error(`Cart is empty`);
+    // Check if there is a user related to the cart
+    logger.debug(
+      `[services] purchaseItemsCart - Find User related to the cart`
+    );
+    let user;
+    try {
+      user = await this.usersRepository.findOne({
+        cartId: cid,
+      });
+    } catch (error) {
+      throw Error(`No user found for this cart`);
     }
-    // For each product in cart
+    // For each product in cart, Verify stock and accumulate ticket data
+    let ticketData = [];
     for (const item of cart.products) {
       // Check the stock of products
       let product = await this.productsRepository.findOne({
@@ -154,37 +168,13 @@ export class CartServices {
       );
       // add it to the ticket data
       ticketData.push(productDTO);
-      // rest purchase quantity from stock
-      logger.debug(`[services] purchaseItemsCart - updating product stock`);
-      const newQuantity = product.stock - item.quantity;
-      await this.productsRepository.updateOne(
-        {
-          _id: item.product,
-        },
-        { $set: { stock: newQuantity } }
-      );
-      // delete it from cart
-      logger.debug(`[services] purchaseItemsCart - delete product from cart`);
-      await this.cartRepository.updateOne(
-        { _id: cid },
-        { $pull: { ["products"]: { product: item.product } } }
-      );
-      logger.debug(
-        `[services] purchaseItemsCart - remaining products in cart ${RemainingCartData}`
-      );
-      logger.debug(
-        `[services] purchaseItemsCart - products successfully purchased to be added to the ticket ${ticketData}`
-      );
     }
-    // fill ticket with Data
-    logger.debug(`[services] purchaseItemsCart - creating ticket data`);
-    const user = await this.usersRepository.findOne({
-      cartId: cid,
-    });
+    // Calculate total amount for the ticket
     const amount = ticketData.reduce(
       (sum, item) => sum + item.quantity * item.price,
       0
     );
+    // Create ticket
     const ticketDTO = {
       amount: amount,
       purchaser: user._id,
@@ -193,9 +183,33 @@ export class CartServices {
     logger.debug(
       `[services] purchaseItemsCart - creating ticket with data ${ticketDTO}`
     );
-    // create ticket
     const ticket = await this.ticketRepository.create(ticketDTO);
     logger.debug(`[services] purchaseItemsCart - ticket created ${ticket}`);
+
+    // Now that the ticket is created, update the stock and clear the cart
+    for (const { product, quantity } of ticketData) {
+      // rest purchase quantity from stock
+      logger.debug(`[services] purchaseItemsCart - updating product stock`);
+      await this.productsRepository.updateOne(
+        {
+          _id: product,
+        },
+        { $inc: { stock: -quantity } }
+      );
+      // delete it from cart
+      logger.debug(`[services] purchaseItemsCart - delete product from cart`);
+      await this.cartRepository.updateOne(
+        { _id: cid },
+        { $pull: { ["products"]: { product: product } } }
+      );
+    }
+
+    logger.debug(
+      `[services] purchaseItemsCart - remaining products in cart ${RemainingCartData}`
+    );
+    logger.debug(
+      `[services] purchaseItemsCart - products successfully purchased to be added to the ticket ${ticketData}`
+    );
     //send email with ticket data
     logger.debug(`[services] purchaseItemsCart - send email with ticket info`);
     await ticketServices.sendTicketEmail(ticket._id);

@@ -4,7 +4,7 @@ import { newId } from "../../utils/id.js";
 
 const userSchema = new mongoose.Schema(
   {
-    _id: { type: String, default: newId},
+    _id: { type: String, default: newId },
     first_name: { type: String, required: true },
     last_name: { type: String, required: true },
     token: { type: String, required: false },
@@ -23,7 +23,18 @@ const userSchema = new mongoose.Schema(
     cartId: { type: String, ref: "Cart" },
     provider: { type: String, default: "local" },
     providerId: String,
-    profilePhoto: { type: [String], default: ["img/defaults/profileDefault.webp"] },
+    status:String,
+    profilePhoto: {
+      type: [String],
+      default: ["img/defaults/profileDefault.webp"],
+    },
+    documents: [
+      {
+        name: { type: String },
+        reference: { type: String },
+      },
+    ],
+    last_connection: { type: Date },
   },
   { versionKey: false, strict: "throw" }
 );
@@ -31,4 +42,3 @@ const userSchema = new mongoose.Schema(
 const userModel = mongoose.model("Users", userSchema);
 
 export const UserDaoMongoose = new mongooseDao(userModel);
-

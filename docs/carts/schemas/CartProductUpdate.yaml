@@ -1,0 +1,19 @@
+components:
+  requestBodies:
+    CartProductUpdate:
+      type: array
+      required:
+        - product
+        - quantity
+      properties:
+        product:
+          type: string
+          description: The unique identifier of the product.
+        quantity:
+          type: number
+          description: The quantity of the product.
+      example:
+        - product: "c3149e28-89bd-4f83-af8a-4ff4d5be55ac"
+          quantity: 10
+        - product: "e15e6cb6-faa5-410b-85b1-01d1fa1595cf"
+          quantity: 3

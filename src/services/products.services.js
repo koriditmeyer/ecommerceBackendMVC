@@ -159,7 +159,7 @@ export class ProductsServices {
       `[services] create method got productData:${objectToString(productData)}`
     );
     if (files?.length) {
-      console.log(files);
+      // console.log(files);
       productData.thumbnail = files.map((e) => e.path.replace(/\\/g, "/"));
     }
     const addedProduct = await this.productsRepository.create(productData);

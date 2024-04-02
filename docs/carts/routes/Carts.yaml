@@ -1,0 +1,547 @@
+paths:
+  /api/carts:
+    post:
+      summary: Create a new cart
+      description: >
+        -This endpoint is restricted to users with the **user** role  
+      tags:
+        - Cart
+      responses:
+        '201':
+          description: Cart created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Cart'
+        '500':
+          description: "Error: Internal Server Error"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+      security:
+        - jwtAuth: [] 
+  /api/carts/{cid}:
+    get:
+      summary: Retrieve a cart by its ID
+      description: >
+        -This endpoint is restricted to users with the **user** or **admin** role        
+      tags:
+        - Cart
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+          description: Cart ID
+          example: 3b0f0e13-077d-42db-8d9c-e22b54ce7a86
+      responses:
+        '200':
+          description: Cart retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Cart'
+        '401':
+          description: "Error: Unauthorized"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string 
+        '403':
+          description: "Error: Forbidden"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string                       
+        '404':
+          description: "Error: Not Found"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: "Error: Internal Server Error"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+      security:
+        - jwtAuth: [] 
+    put:
+      summary: Update a cart
+      description: >
+        -This endpoint is restricted to users with the **admin** role  
+      tags:
+        - Cart
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+          description: Cart ID
+          example: 3b0f0e13-077d-42db-8d9c-e22b54ce7a86
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/CartProductUpdate'
+      responses:
+        '200':
+          description: Cart updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Cart'
+        '401':
+          description: "Error: Unauthorized"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string 
+        '403':
+          description: "Error: Forbidden"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string                       
+        '404':
+          description: "Error: Not Found"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: "Error: Internal Server Error"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+      security:
+        - jwtAuth: [] 
+    delete:
+      summary: Clear a cart
+      description: >
+        -This endpoint is restricted to users with the **user** or **admin** role  
+      tags:
+        - Cart
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+          description: Cart ID
+          example: 3b0f0e13-077d-42db-8d9c-e22b54ce7a86
+      responses:
+        '200':
+          description: Cart cleared successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Cart'
+        '401':
+          description: "Error: Unauthorized"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string 
+        '403':
+          description: "Error: Forbidden"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string                       
+        '404':
+          description: "Error: Not Found"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: "Error: Internal Server Error"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+      security:
+        - jwtAuth: [] 
+  /api/carts/{cid}/product/{pid}:
+    post:
+      summary: Add a product to the cart
+      description: >
+        -This endpoint is restricted to users with the **user**  or **admin** role  
+        
+        -The user can only modify his own cart.
+      tags:
+        - Cart
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+          description: Cart ID
+          example: 3b0f0e13-077d-42db-8d9c-e22b54ce7a86
+        - in: path
+          name: pid
+          required: true
+          schema:
+            type: string
+          description: Product ID
+          example: 64444fac-1a0e-4d04-89d8-3695b968230f
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quantity:
+                  type: number
+                  example: 2
+      responses:
+        '201':
+          description: Product Added to the Cart
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Cart'
+        '401':
+          description: "Error: Unauthorized"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string 
+        '403':
+          description: "Error: Forbidden"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string                       
+        '404':
+          description: "Error: Not Found"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: "Error: Internal Server Error"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+      security:
+        - jwtAuth: [] 
+    delete:
+      summary: Remove a product from the cart
+      description: >
+        -This endpoint is restricted to users with the **user**  or **admin** role  
+        
+        -The user can only delete his own cart.
+      tags:
+        - Cart
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+          description: Cart ID
+          example: 3b0f0e13-077d-42db-8d9c-e22b54ce7a86
+        - in: path
+          name: pid
+          required: true
+          schema:
+            type: string
+          description: Product ID
+          example: 64444fac-1a0e-4d04-89d8-3695b968230f
+      responses:
+        '200':
+          description: Product Removed from the Cart
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Cart'
+        '401':
+          description: "Error: Unauthorized"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string 
+        '403':
+          description: "Error: Forbidden"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string                       
+        '404':
+          description: "Error: Not Found"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: "Error: Internal Server Error"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string 
+      security:
+        - jwtAuth: []
+  /api/carts/{cid}/purchase:
+    get:
+      summary: Purchase items in the cart
+      description: >
+        -This endpoint is restricted to users with the **user**  or **admin** role  
+        
+        -The user can only purchase his own cart.  
+      tags:
+        - Cart
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema:
+            type: string
+          description: Cart ID
+          example: 3b0f0e13-077d-42db-8d9c-e22b54ce7a86
+      responses:
+        '200':
+          description: Items purchased sucessfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  payload:
+                    type: object
+                    properties:
+                      amount:
+                        type: number
+                        example: 0
+                      purchaser:
+                        type: string
+                        example: "9c25bd5e-a45f-4822-ac7d-acd8f38d0594"
+                      products:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            product: 
+                              type: string
+                              example: "c3149e28-89bd-4f83-af8a-4ff4d5be55ac"
+                            quantity:
+                              type: number
+                              example: 10
+                            price:
+                              type: number
+                              example: 139.99                          
+                      _id:
+                        type: string
+                        example: "ecc42da0-2fd7-453c-9b94-cb843d6b7588"
+                      code:
+                        type: string
+                        example: "db4ca2c3-3c0f-4dad-9fed-0288f4a54bca"
+                      purchase_datetime:
+                        type: string
+                        format: date-time
+                        example: "2024-04-02T02:18:56.382Z"
+        '401':
+          description: "Error: Unauthorized"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string 
+        '403':
+          description: "Error: Forbidden"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string                         
+        '404':
+          description: "Error: Not Found"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: "Error: Internal Server Error"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string 
+      security:
+        - jwtAuth: []

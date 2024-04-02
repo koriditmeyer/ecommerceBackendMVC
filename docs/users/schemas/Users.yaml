@@ -79,12 +79,27 @@ components:
         providerId:
           type: string
           description: Provider specific identifier for the user.
+        status:
+          type: string
+          description: User status.        
         profilePhoto:
           type: array
           items:
             type: string
           Default: ["static/img/defaults/profileDefault.png"]
           description: URL to the user's profile photo.
+        documents:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: The name of the document
+              reference:
+                type: string
+                format: binary
+                description: The file content of the document  
       example:
         _id: 5f4d4bcf8f8f8f8f8f8f8f8
         first_name: John

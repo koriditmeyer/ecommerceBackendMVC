@@ -2,6 +2,7 @@ import multer from "multer";
 import { uploadFile } from "../middlewares/multer.js";
 import { multerErrorHandler } from "../middlewares/multerErrorHandler.js";
 import { userServices } from "../services/user.services.js";
+import { appendJwtAsCookie } from "../middlewares/authentication.js";
 
 export async function findUser(req, res, next) {
   const populate = req.params.populate;
@@ -75,5 +76,47 @@ export const addPictureImages = [
     } catch (error) {
       next(error); // Pass any errors to the error handling middleware
     }
+  },
+];
+
+export const addDocuments = [
+  uploadFile(
+    "documents",
+    ["application/pdf"],
+    25, //in Mb
+    "documents",
+    3
+  ),
+  async (req, res, next) => {
+    try {
+      const id = req.params.id;
+      const newDocuments = req.files;
+      req.logger.debug("[Controller] got id: " + id);
+      req.logger.debug("[Controller] got new files");
+      const updatedUser = await userServices.updateDocuments(id, newDocuments);
+      res["successfullPut"](updatedUser);
+    } catch (error) {
+      next(error); // Pass any errors to the error handling middleware
+    }
+  },
+];
+
+export const userPremium = [
+  async (req, res, next) => {
+    try {
+      const id = req.params.id
+      req.logger.debug(
+        "[Controller] got to userPremium for user id:" +
+          id
+      );
+      req.user = await userServices.userPremium(id);
+      next()
+    } catch (error) {
+      next(error);
+    }
+  },
+  appendJwtAsCookie,
+  async (req, res, next) => {
+    res["successfullPost"](req.user);
   },
 ];

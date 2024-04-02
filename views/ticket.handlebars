@@ -7,6 +7,7 @@
 <body>
   <div>
     <span style="font-weight: bold;">Here is your purchase order: </span>
+    <span style="font-weight: bold;">Ticket code: {{this.message._id}} </span>
     <span>{{#each this.message.products}}
       <div class="">
         <div class="">
@@ -15,7 +16,7 @@
         <div class="">
           <h2 class="color:red">{{this.product.title}}</h2>
           <span class="">{{this.product.code}}</span>
-          <p class="">{{this.product.description}}</p>
+          <p class="">{{this.product.description.description.[0]}}</p>
           <p class="">Quantity {{this.quantity}}
             <p />
           <p class="">Price ${{this.price}}
