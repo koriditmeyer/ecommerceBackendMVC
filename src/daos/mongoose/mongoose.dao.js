@@ -92,7 +92,7 @@ export class mongooseDao {
       .lean();
     // if (!deleted) throw new Error("NOT FOUND");
     deleted && delete deleted._id;
-    console.log(deleted);
+    //console.log(deleted);
     logger.info(
       `[DAO] - deleteOne method with deleted data ${objectToString(deleted)}`
     );

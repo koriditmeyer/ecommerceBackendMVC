@@ -12,7 +12,7 @@ class SmsServiceTwilio {
       body: message
     }
 
-    console.log(smsOptions)
+    logger.silly(smsOptions)
     logger.debug(`[services] send method return fake sms sent` )
   }
 }

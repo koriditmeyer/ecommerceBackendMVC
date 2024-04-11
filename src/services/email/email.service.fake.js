@@ -26,7 +26,7 @@ class FakeEmailService {
     if (attachments.length > 0) {
       emailOptions.attachments = attachments
     }
-    console.log(JSON.stringify(emailOptions, null, 2))
+    logger.silly(JSON.stringify(emailOptions, null, 2))
     logger.info(`[services] send method return fake email sent` )
   }
 }

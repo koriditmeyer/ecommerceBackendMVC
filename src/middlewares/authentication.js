@@ -16,7 +16,7 @@ import { AuthenticationServerError } from "../models/errors/authentication.error
 //create cookie
 export async function appendJwtAsCookie(req, res, next) {
   try {
-    const cookieData = new UserResponseDTO(req.user).toCookie()
+    const cookieData = new UserResponseDTO(req.user).toCookie();
     req.logger.debug(
       `[Authentication] Try to set cookie with ${objectToString(cookieData)}`
     );
@@ -38,9 +38,10 @@ export async function appendJwtAsCookie(req, res, next) {
 export async function removeJwtFromCookies(req, res, next) {
   req.logger.debug("[Authentication] Attempting to clear JWT cookie"); // Log the action of clearing the cookie
   // res.clearCookie("authorization", COOKIE_OPTS); // remove only the JWT from cookie
-  if (req.cookies[JWT_COOKIE_NAME]) {
+  //console.log(req)
+  if (req.cookies[JWT_COOKIE_NAME] || req.signedCookies[JWT_COOKIE_NAME]) {
     req.logger.info("[Authentication] JWT cookie found, clearing it.");
-    res.clearCookie(JWT_COOKIE_NAME); // Clear the cookie if it exists
+    res.clearCookie(JWT_COOKIE_NAME, JWT_COOKIE_OPTS); // Clear the cookie if it exists
   } else {
     req.logger.warning(
       "[Authentication] No JWT cookie found, nothing to clear."
@@ -99,6 +100,8 @@ passport.use(
           "[Passport] local-login strategy returns, logged-in User Data:",
           userData
         );
+        await sessionsServices.updateLastConnectionTime(userData._id);
+        logger.info("[Passport] local-login strategy update connexion time");
         done(null, userData);
       } catch (error) {
         done(error);
@@ -108,8 +111,9 @@ passport.use(
 );
 
 // logout user
-export function clearSession(req, res, next) {
+export async function clearSession(req, res, next) {
   if (req.session) {
+    logger.info("[Passport] local-login strategy update connexion time");
     req.session.destroy((err) => {
       if (err) {
         // Handle error case
@@ -128,31 +132,30 @@ export function clearSession(req, res, next) {
 }
 
 //use passport jwt strategy to confirm logged in User
-  passport.use(
-    "jwt",  
-    new JwtStrategy(
-      {
-        jwtFromRequest: ExtractJwt.fromExtractors([
-          function (req) {
-            let token = null;
-            if (req?.signedCookies) {
-              token = req.signedCookies[`${JWT_COOKIE_NAME}`];
-              req.logger.info(
-                `[Passport] Enter Passport JWT, Extracted Token:${token}`
-              ); // Log the extracted token
-            }
-            return token;
-          },
-        ]),
-        // @ts-ignore
-        secretOrKey: JWT_PRIVATE_KEY,
-      },
-      function loginUser(user, done) {
-        return done(null, user);
-      }
-    )
-  );
-
+passport.use(
+  "jwt",
+  new JwtStrategy(
+    {
+      jwtFromRequest: ExtractJwt.fromExtractors([
+        function (req) {
+          let token = null;
+          if (req?.signedCookies) {
+            token = req.signedCookies[`${JWT_COOKIE_NAME}`];
+            req.logger.info(
+              `[Passport] Enter Passport JWT, Extracted Token:${token}`
+            ); // Log the extracted token
+          }
+          return token;
+        },
+      ]),
+      // @ts-ignore
+      secretOrKey: JWT_PRIVATE_KEY,
+    },
+    function loginUser(user, done) {
+      return done(null, user);
+    }
+  )
+);
 
 // Passport Github Strategy for Registering Users
 import { Strategy as GithubStrategy } from "passport-github2";

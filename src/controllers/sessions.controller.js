@@ -44,6 +44,15 @@ export const loginUser = [
 ];
 
 export const logoutUser = [
+  authenticate("jwt"),
+  async (req, res, next) => {
+    try {
+      await sessionsServices.updateLastConnectionTime(req.user._id)
+      next()
+    } catch (error) {
+      next(error)
+    }
+  },
   removeJwtFromCookies,
   clearSession,
   async (req, res, next) => {

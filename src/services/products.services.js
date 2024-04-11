@@ -2,13 +2,16 @@ import { IncorrectDataError } from "../models/errors/incorrectData.error.js";
 import { NotFoundError } from "../models/errors/notFound.error.js";
 import { categoryRepository } from "../repository/category.repository.js";
 import { productsRepository } from "../repository/products.repository.js";
+import { usersRepository } from "../repository/user.repository.js";
 import { logger } from "../utils/logger/index.js";
 import { objectToString } from "../utils/objectToString.js";
+import { emailService } from "./email/email.service.js";
 
 export class ProductsServices {
   constructor(productsRepository) {
     this.productsRepository = productsRepository;
     this.categoryRepository = categoryRepository;
+    this.usersRepository = usersRepository;
   }
 
   async getProductQuery(query) {
@@ -116,7 +119,7 @@ export class ProductsServices {
     // if(!search){
     //   search=""
     // }
-    console.log(search);
+    //console.log(search);
     let category;
     try {
       // Start with an empty pipeline
@@ -154,7 +157,7 @@ export class ProductsServices {
     return category;
   }
 
-  async create(files, productData) {
+  async create(files, productData, userId) {
     logger.debug(
       `[services] create method got productData:${objectToString(productData)}`
     );
@@ -162,6 +165,7 @@ export class ProductsServices {
       // console.log(files);
       productData.thumbnail = files.map((e) => e.path.replace(/\\/g, "/"));
     }
+    productData.publishedBy = userId;
     const addedProduct = await this.productsRepository.create(productData);
     logger.info(
       `[services] create method return added product: ${addedProduct}`
@@ -175,7 +179,7 @@ export class ProductsServices {
         updatedData
       )}`
     );
-    console.log(id, updatedData);
+    //console.log(id, updatedData);
     if (updatedData.thumbnail) {
       throw new Error("You can't modify picture URL with this endpoint");
     }
@@ -191,7 +195,42 @@ export class ProductsServices {
 
   async deleteProduct(id) {
     logger.debug(`[services] deleteProduct method got: id:${id}`);
+    // find if product is owned by a premium user
+    let product = await this.productsRepository.findOne({ _id: id });
+    let user;
+    try {
+      user = await this.usersRepository.findOne({
+        _id: product.publishedBy,
+        roles: { $in: ["premium"] },
+      });
+    } catch (error) {
+      if (error instanceof NotFoundError) {
+        // Handle not found error, 
+        console.log("User not found, proceeding without error.");
+        user = null; // Proceed without a user
+      } else {
+        // If the error is of another type,
+        throw error;
+      }
+    }
     let deletedProduct = await this.productsRepository.deleteOne({ _id: id });
+    if (user) {
+      // send email with message to users premium
+      const object = `Your product has been deleted`;
+      const destinatary = user.email;
+      const templateName = "deleteProduct";
+      const message = {
+        name: user.first_name,
+        product: {
+          _id: product._id,
+          title: product.title,
+        },
+      };
+      await emailService.send(destinatary, object, templateName, message);
+      logger.debug(
+        `[services] deleteUsersByTime method - message sucessfully sent to ${user.first_name}`
+      );
+    }
     logger.info(
       `[services] findOne method return deleted product: ${objectToString(
         deletedProduct

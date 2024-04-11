@@ -12,7 +12,7 @@ export const PORT = parseInt(process.env.PORT)
 export const NODE_ENV = process.env.NODE_ENV
 
 // CORS
-export const CLIENT_ORIGIN = "http://192.168.0.28:5173";
+export const CLIENT_ORIGIN = "http://192.168.1.37:5173";
 
 // PERSITANCE
 export const PERSISTENCE = process.env.PERSISTENCE;
@@ -67,3 +67,6 @@ export const EMAIL_PASS = process.env.EMAIL_PASS
 export const TWILIO_SID = process.env.TWILIO_SID
 export const TWILIO_TOKEN = process.env.TWILIO_TOKEN
 export const TWILIO_SMS_NUMBER = process.env.TWILIO_SMS_NUMBER
+
+//USER DEL TIME LIMIT
+export const USER_DEL_TIME_LIMIT= 2*24*60*60*1000 //ms

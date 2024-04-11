@@ -2,13 +2,17 @@ import { Router } from "express";
 import { authenticate } from "../../controllers/sessions.controller.js";
 import { allowedRolesCookie } from "../../middlewares/authorization.js";
 import {
+  findCurrentUser,
+  findAllUsers,
   findUser,
-  findUsers,
   resetPwdUser,
   updateUser,
   addDocuments,
   addPictureImages,
-  userPremium
+  userPremium,
+  deleteUser,
+  deleteUsersByTime,
+  updateUsersRoles
 } from "../../controllers/users.controller.js";
 import tryCatch from "../../middlewares/trycatch.js";
 
@@ -18,7 +22,7 @@ usersRouter.get(
   "/current:populate",
   authenticate("jwt"),
   allowedRolesCookie(["user", "admin"]),
-  tryCatch(findUser)
+  tryCatch(findCurrentUser)
 );
 usersRouter.put(
   "/currentPwd",
@@ -42,10 +46,17 @@ usersRouter.put(
 );
 
 usersRouter.get(
+  "/",
+  authenticate("jwt"),
+  allowedRolesCookie(["admin"]),
+  tryCatch(findAllUsers)
+);
+
+usersRouter.get(
   "/:id",
   authenticate("jwt"),
   allowedRolesCookie(["admin"]),
-  tryCatch(findUsers)
+  tryCatch(findUser)
 );
 
 usersRouter.put(
@@ -60,4 +71,25 @@ usersRouter.put(
   authenticate("jwt"),
   allowedRolesCookie(["admin"]),
   userPremium
+);
+
+usersRouter.delete(
+  "/delete/:id",
+  authenticate("jwt"),
+  allowedRolesCookie(["admin"]),
+  tryCatch(deleteUser)
+);
+
+usersRouter.delete(
+  "/delete",
+  authenticate("jwt"),
+  allowedRolesCookie(["admin"]),
+  tryCatch(deleteUsersByTime)
+);
+
+usersRouter.put(
+  "/roles/:id",
+  authenticate("jwt"),
+  allowedRolesCookie(["admin"]),
+  tryCatch(updateUsersRoles)
 );

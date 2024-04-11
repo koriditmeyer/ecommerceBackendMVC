@@ -8,6 +8,7 @@ export class UserResponseDTO {
   constructor(user) {
     (this._id = user._id),
     (this.first_name = user.first_name),
+    (this.last_name = user.last_name),
     (this.roles = user.roles),
     (this.verified = user.verified),
     (this.city_locality = user.city_locality),

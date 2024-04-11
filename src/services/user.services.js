@@ -1,12 +1,15 @@
+import { USER_DEL_TIME_LIMIT } from "../config/config.js";
 import { UserResponseDTO } from "../daos/dtos/user.dto.js";
 import { AuthenticationError } from "../models/errors/authentication.error.js";
 import { IncorrectDataError } from "../models/errors/incorrectData.error.js";
+import { NotFoundError } from "../models/errors/notFound.error.js";
 import { cartRepository } from "../repository/cart.repository.js";
 import { usersRepository } from "../repository/user.repository.js";
 import { hash } from "../utils/hash.js";
 import { logger } from "../utils/logger/index.js";
 import { objectToString } from "../utils/objectToString.js";
 import { toPojo } from "../utils/toPojo.js";
+import { emailService } from "./email/email.service.js";
 
 export class UserServices {
   constructor(usersRepository, cartRepository) {
@@ -68,8 +71,12 @@ export class UserServices {
   async findMany(query) {
     logger.debug(`[services] findMany method got: query:${query}`);
     const users = await this.usersRepository.findMany(query);
-    logger.info(`[services] findMany method return users: ${users}`);
-    return users;
+    const usersDTO = users.map((user) => {
+      let userDTO = { ...new UserResponseDTO(user), email: user.email };
+      return toPojo(userDTO);
+    });
+    logger.info(`[services] findMany method return users: ${usersDTO}`);
+    return usersDTO;
   }
 
   async resetPassword(id, password) {
@@ -168,7 +175,7 @@ export class UserServices {
         { $set: { status: "PendingDocumentsValidation" } }
       );
     }
-    console.log(modified);
+    //console.log(modified);
     const userDTO = toPojo(new UserResponseDTO(modified));
     logger.info(
       `[services] updateDocuments method return modified: ${userDTO}`
@@ -204,6 +211,69 @@ export class UserServices {
     }
     const userDTO = toPojo(new UserResponseDTO(modified));
     logger.info(`[services] userPremium method return modified: ${userDTO}`);
+    return userDTO;
+  }
+
+  async deleteUser(id) {
+    logger.debug(`[services] deleteUser method`);
+    const user = await this.usersRepository.deleteOne({ _id: id });
+    logger.info(`[services] deleteUser method return user deleted: ${user}`);
+    return user;
+  }
+
+  async deleteUsersByTime() {
+    logger.debug(`[services] deleteUsersByTime method`);
+    const filter = Date.now() - USER_DEL_TIME_LIMIT;
+    const users = await this.usersRepository.findMany({
+      last_connection: { $lt: filter },
+      roles: { $nin: ["admin"] } 
+    });
+    if(users.length==0){
+      throw new NotFoundError;
+    }
+    const usersDeleted = await this.usersRepository.deleteMany({
+      last_connection: { $lt: filter },
+      roles: { $nin: ["admin"] } 
+    });
+    logger.info(
+      `[services] deleteUsersByTime method return users deleted: ${usersDeleted}`
+    );
+    for (const user of users) {
+      // send email with message to users deleted
+      const object = `Your account has been deleted`;
+      const destinatary = user.email;
+      const templateName = "deleteUser";
+      const message = {
+        name: user.first_name,
+        time: USER_DEL_TIME_LIMIT / 1000 / 60 / 60, //hours
+      };
+      await emailService.send(destinatary, object, templateName, message);
+      logger.debug(
+        `[services] deleteUsersByTime method - message sucessfully sent to ${user.first_name}`
+      );
+    }
+    return users;
+  }
+
+  async updateUsersRoles(id, roles) {
+    logger.debug(
+      `[services] updateUsersRoles method got: user id:${id}, and updated roles ${roles}`
+    );
+
+    // check that roles are within the allowed roles
+    if (!["user", "premium", "admin"].some((role) => roles.includes(role))) {
+      throw new Error(`Not in approved roles`);
+    }
+    //update
+    const updatedUser = await this.usersRepository.updateOne(
+      { _id: id },
+      { $set: { roles: roles } } // Use computed property name to set dynamically
+    );
+    // For security reasons we want minimum things from user to initiate session
+    const userDTO = toPojo(new UserResponseDTO(updatedUser));
+    logger.info(
+      `[services] updateUsersRoles method return updated User: ${userDTO}`
+    );
     return userDTO;
   }
 }

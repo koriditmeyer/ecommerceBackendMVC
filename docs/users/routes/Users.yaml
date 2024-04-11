@@ -199,6 +199,65 @@ paths:
       security:
         - jwtAuth: []
 
+  /api/users:
+    get:
+      summary: Get all users (Admin only)
+      tags:
+        - Users
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: "Error: Unauthorized"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: "Error: Forbidden"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: "Error: Not Found"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: "Error: Internal Server Error"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+      security:
+        - jwtAuth: []
+
   /api/users/{id}:
     get:
       summary: Get a user by ID (Admin only)

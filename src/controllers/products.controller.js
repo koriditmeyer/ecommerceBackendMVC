@@ -38,12 +38,12 @@ export const addProduct = [
   async (req, res, next) => {
     try {
       const data = req.body;
-      console.log(data)
+      //console.log(data)
       const files = req.files;
       req.logger.debug("[Controller] got data to add: " + objectToString(data));
       req.logger.debug("[Controller] got files to add ");
-
-      const addedProduct = await productsServices.create(files, data);
+      const _id = req.user._id;
+      const addedProduct = await productsServices.create(files, data, _id);
       res["successfullPost"](addedProduct);
     } catch (error) {
       // console.log(error)

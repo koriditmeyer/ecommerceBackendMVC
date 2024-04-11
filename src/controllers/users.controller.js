@@ -4,7 +4,7 @@ import { multerErrorHandler } from "../middlewares/multerErrorHandler.js";
 import { userServices } from "../services/user.services.js";
 import { appendJwtAsCookie } from "../middlewares/authentication.js";
 
-export async function findUser(req, res, next) {
+export async function findCurrentUser(req, res, next) {
   const populate = req.params.populate;
   const id = req.user._id;
   req.logger.debug(
@@ -14,31 +14,31 @@ export async function findUser(req, res, next) {
       populate
   );
   let user;
-  if (!populate) {
-    user = await userServices.findOne(id);
-  } else {
+  if (populate) {
     user = await userServices.findOnePopulate(id);
+  } else {
+    user = await userServices.findOne(id);
   }
   res["successfullGet"](user);
 }
 
-export async function findUsers(req, res, next) {
-  if (req.params.id) {
+export async function findAllUsers(req, res, next) {
+    req.logger.debug("[Controller] got all users to search");
+    const users = await userServices.findMany(req.query);
+    res["successfullGet"](users);
+}
+
+export async function findUser(req, res, next) {
     let id = req.params.id;
     req.logger.debug("[Controller] got user to search with " + id);
     const user = await userServices.findOne(id);
     res["successfullGet"](user);
-  } else {
-    req.logger.debug("[Controller] got all users to search");
-    const users = await userServices.findMany(req.query);
-    res["successfullGet"](users);
-  }
 }
 
 export async function resetPwdUser(req, res, next) {
   const _id = req.user._id;
   const { password } = req.body;
-  console.log(req.body);
+  //console.log(req.body);
   req.logger.debug("[Controller] got to reset password for user id:" + _id);
   const userUpdated = await userServices.resetPassword(_id, password);
   res["successfullPut"](userUpdated);
@@ -120,3 +120,34 @@ export const userPremium = [
     res["successfullPost"](req.user);
   },
 ];
+
+export async function deleteUser(req, res, next) {
+  const id = req.params.id;
+  req.logger.debug(
+    "[Controller] got to deleteUser "+id);
+  const userDeleted = await userServices.deleteUser(id);
+  res["successfullDelete"](userDeleted);
+}
+
+
+export async function deleteUsersByTime(req, res, next) {
+  req.logger.debug(
+    "[Controller] got to deleteUsersByTime");
+  const userDeleted = await userServices.deleteUsersByTime();
+  res["successfullDelete"](userDeleted);
+}
+
+
+
+export async function updateUsersRoles(req, res, next) {
+  const userData = req.body;
+  const id = req.params.id;
+  req.logger.debug(
+    "[Controller] got to updateUsersRoles for user id:" +
+      id +
+      "and new data" +
+      userData
+  );
+  const userUpdated = await userServices.updateUsersRoles(id, userData);
+  res["successfullPut"](userUpdated);
+}

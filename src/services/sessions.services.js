@@ -83,10 +83,13 @@ export class SessionsServices {
       throw new Error("Invalid or expired token");
     }
     logger.debug(`[services] verify method - token date valid, updating user`);
-    const updatedUser = await this.usersRepository.updateOne(
+    let updatedUser = await this.usersRepository.updateOne(
       { _id: user._id },
       { $set: { verified: true, token: "", tokenExpiry: "" } }
     );
+    updatedUser={
+      ...updatedUser, _id:user._id
+    }
     const userDTO = toPojo(new UserResponseDTO(updatedUser));
     logger.info(`[services] register method exit: ${objectToString(userDTO)}`);
     return userDTO;
@@ -114,6 +117,15 @@ export class SessionsServices {
     const userDTO = toPojo(new UserResponseDTO(user));
     logger.info(`[services] login method exit: ${objectToString(userDTO)}`);
     return userDTO;
+  }
+
+  async updateLastConnectionTime (userId){
+    logger.debug(`[services] updateLastConnectionTime method got: User ${userId} `);
+    await this.usersRepository.updateOne(
+      { _id: userId },
+      { last_connection: new Date() }
+    )
+    logger.info(`[services] updateLastConnectionTime method: User ${userId} last connection time updated.`);
   }
 }
 

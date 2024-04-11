@@ -23,6 +23,7 @@ const productSchema = new mongoose.Schema(
     badge: { type: String },
     productURL: { type: String },
     boughtInLastMonth: { type: Number },
+    publishedBy: { type: String, ref: "Users", required:true },
     thumbnail: {
       type: [String],
       default: ["static/img/defaults/thumbnailDefault.png"],
@@ -42,9 +43,7 @@ export class ProductDao extends mongooseDao {
   // Add any user-specific methods here, if needed
   async distinct(pipeline) {
     logger.debug(
-      `[DAO] - distinct method with data ${objectToString(
-        pipeline
-      )}`
+      `[DAO] - distinct method with data ${objectToString(pipeline)}`
     );
     let result = await this.model.aggregate(pipeline);
     if (!result) throw new Error("NOT FOUND");

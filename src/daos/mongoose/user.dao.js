@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema(
     status:String,
     profilePhoto: {
       type: [String],
-      default: ["img/defaults/profileDefault.webp"],
+      default: ["static/img/defaults/profileDefault.webp"],
     },
     documents: [
       {
