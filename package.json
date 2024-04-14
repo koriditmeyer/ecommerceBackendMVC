@@ -6,9 +6,9 @@
   "main": "src/main.js",
   "scripts": {
     "start": "node src/main.js",
-    "dev": "nodemon --env-file=prod.env src/main.js -e js,html,yaml,handlebars",
-    "test": "node --env-file=prod.env ./test/services/sessions.services.test.js",
-    "tdd": "nodemon --env-file=prod.env ./test/services/sessions.services.test.js -e js,html,handlebars"
+    "dev": "nodemon --env-file=dev.env src/main.js -e js,html,yaml,handlebars",
+    "test": "node --env-file=test.env ./test/services/sessions.services.test.js",
+    "tdd": "nodemon --env-file=test.env ./test/services/sessions.services.test.js -e js,html,handlebars"
   },
   "keywords": [
     "E",
