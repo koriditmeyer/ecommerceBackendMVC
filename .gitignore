@@ -5,7 +5,8 @@
 node_modules
 
 # Static Files
-static
+static/products
+static/profiles
 
 # Environment files
 *.env
