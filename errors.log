@@ -2980,3 +2980,7 @@
 {"level":"error","message":"Authorization Error - You don't have the required authorization","service":"Ecommerce","status":"[Custom]","statusCode":403,"timestamp":"2024-04-11T20:46:19.142Z"}
 {"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-04-11T20:46:42.073Z"}
 {"level":"error","message":"Not Found","service":"Ecommerce","status":"[Custom]","statusCode":404,"timestamp":"2024-04-11T20:47:01.332Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-04-14T16:49:06.423Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-04-14T16:49:07.462Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-04-14T16:49:09.475Z"}
+{"level":"error","message":"Unauthorized","service":"Ecommerce","status":"[Custom]","statusCode":500,"timestamp":"2024-04-14T16:49:13.490Z"}
