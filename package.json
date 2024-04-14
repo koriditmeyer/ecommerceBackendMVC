@@ -19,6 +19,7 @@
   "author": "Kori Ditmeyer",
   "license": "ISC",
   "dependencies": {
+    "@faker-js/faker": "^8.4.0",
     "artillery-plugin-metrics-by-endpoint": "^1.2.0",
     "bcrypt": "^5.1.1",
     "cheerio": "^1.0.0-rc.12",
@@ -47,7 +48,6 @@
     "winston": "^3.11.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^8.4.0",
     "chai": "^5.1.0",
     "mocha": "^10.4.0",
     "supertest": "^6.3.4"
