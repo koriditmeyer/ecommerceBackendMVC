@@ -12,7 +12,7 @@ export const PORT = parseInt(process.env.PORT)
 export const NODE_ENV = process.env.NODE_ENV
 
 // CORS
-export const CLIENT_ORIGIN = "http://192.168.1.37:5173";
+export const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN;
 
 // PERSITANCE
 export const PERSISTENCE = process.env.PERSISTENCE;
