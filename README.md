@@ -1,10 +1,13 @@
 <h3 align="center">
-Welcome to the E-Commerce Express Backend project. 
+Welcome to the E-Commerce Express [BACKEND] project. 
 </h3>
+
+For the [FRONTEND] project go here: https://github.com/koriditmeyer/SPAapp
+
 
 ## 🌎 VIEW - Front end with React
 
-- Amazon E-Commerce Clone: (Soon)
+- Amazon E-Commerce Clone: https://spaapp-4fdk.onrender.com
 
 ## 💻 Technologies Used
 - Programming Language: 
@@ -33,31 +36,48 @@ Welcome to the E-Commerce Express Backend project.
 - External communication: 
 ![Node-Mailer](https://img.shields.io/badge/NodeMailer-NodeMailer-brightgreen?logo=Multer&logoColor=010101&label=%20&labelColor=010101&color=010101)
 ![Twilio](https://img.shields.io/badge/twilio-twilio-brightgreen?logo=passport&logoColor=F22F46&label=%20&labelColor=010101&color=F22F46)
+![HTML to TExt](https://img.shields.io/badge/HTML_To_Text-HTML_To_Text-brightgreen?logo=Multer&logoColor=010101&label=%20&labelColor=010101&color=010101)
+
+- Mailing Template: 
+![Handlebars](https://img.shields.io/badge/handlebarsdotjs-Handlebars-brightgreen?logo=handlebarsdotjs&logoColor=000000&label=%20&labelColor=white&color=000000)
 
 - Testing/ Error: 
 ![Faker](https://img.shields.io/badge/Faker-Faker-brightgreen?logo=Multer&logoColor=010101&label=%20&labelColor=010101&color=010101)
 ![Winston](https://img.shields.io/badge/Winston-Winston-brightgreen?logo=Winstonk&logoColor=010101&label=%20&labelColor=010101&color=010101)
 ![Artillery](https://img.shields.io/badge/Artillery-Artillery-brightgreen?logo=Artillery&logoColor=010101&label=%20&labelColor=010101&color=010101)
+![Chai](https://img.shields.io/badge/chai-chai-brightgreen?logo=chai&logoColor=A30701&label=%20&labelColor=black&color=A30701)
+![Mocha](https://img.shields.io/badge/mocha-mocha-brightgreen?logo=mocha&logoColor=8D6748&label=%20&labelColor=black&color=8D6748)
+![Supertest](https://img.shields.io/badge/Supertest-Supertest-brightgreen?logo=Supertest&logoColor=010101&label=%20&labelColor=010101&color=010101)
 
-- Mailing Template: 
-![Handlebars](https://img.shields.io/badge/handlebarsdotjs-Handlebars-brightgreen?logo=handlebarsdotjs&logoColor=000000&label=%20&labelColor=white&color=000000)
-
-- Front End: 
-None
-
+- Documentation: 
+![Swagger](https://img.shields.io/badge/Swagger-Swagger-brightgreen?logo=swagger&logoColor=85EA2D&label=%20&labelColor=black&color=85EA2D)
 
 - version control system: 
 ![Git](https://img.shields.io/badge/git-Git-brightgreen?logo=git&logoColor=F05032&label=%20&labelColor=black&color=F05032)
 ![GitHub](https://img.shields.io/badge/github-GitHub-brightgreen?logo=github&logoColor=white&label=%20&labelColor=black&color=181717)
 
+- Data Scraping: 
+![Cheerio](https://img.shields.io/badge/cheerio-Cheerio-brightgreen?logo=cheerio&logoColor=E88C1F&label=%20&labelColor=black&color=E88C1F)
+![puppeteer](https://img.shields.io/badge/puppeteer-Puppeteer-brightgreen?logo=puppeteer&logoColor=40B5A4&label=%20&labelColor=black&color=40B5A4)
+![papaparse](https://img.shields.io/badge/papaparse-Papaparse-brightgreen?logo=papaparse&logoColor=40B5A4&label=%20&labelColor=black&color=black)
+
 ## 💼 Technical Elements
 
+18/04/24 [V1.4]:
+- [NEW] Add API documentation with Swagger 
+- [NEW] Add integration test on one endpoint with Supertest, mocha and chai 
+- [NEW] Add product owner to product schema
+- [NEW] Add new premium user role and several benefits (can add product, if admin delete his products get email, if admin delete account get email notification)
+- [NEW] Add new admin features (admin can delete users, products...)
+- [NEW] Add checkout to the product flow that send a confirmation email
+- [NEW] Scrapt Amazon product Data with cheerio, puppeteer and paparse. Database has more than +175 000 products
+
 15/02/24 [V1.3]:
-- [NEW] shift from console log to winston logger. Implement a dev and production logger 
-- [NEW] Add a new api to create a test error log at api/test/createFakeErrorLog
-- [NEW] Add artillery test flow for register+login scenario (6 of 200 timed out, median response time 1249ms)
-- [NEW] Implement Node clustering with 8 processors -> artillery test flow for register+login scenario (0 of 200 timed out, median response time 210ms)
-- [NEW] Containerizing the Node.js Web Application with Docker
+-  shift from console log to winston logger. Implement a dev and production logger 
+- Add a new api to create a test error log at api/test/createFakeErrorLog
+- Add artillery test flow for register+login scenario (6 of 200 timed out, median response time 1249ms)
+- Implement Node clustering with 8 processors -> artillery test flow for register+login scenario (0 of 200 timed out, median response time 210ms)
+- Containerizing the Node.js Web Application with Docker
 
 06/02/24 [V1.2]:
 - Add a new compression for products query using brotly. 
