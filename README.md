@@ -7,7 +7,7 @@ For the [FRONTEND] project go here: https://github.com/koriditmeyer/SPAapp
 
 ## 🌎 VIEW - Front end with React
 
-- Amazon E-Commerce Clone: https://spaapp-4fdk.onrender.com
+- Amazon E-Commerce Clone: https://amazon.ditmeyer.com
 
 ## 💻 Technologies Used
 - Programming Language: 
