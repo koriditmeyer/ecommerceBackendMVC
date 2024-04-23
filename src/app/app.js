@@ -23,9 +23,20 @@ export const app = express();
  * MIDDLEWARES
  *
  */
+const allowedOrigins = [
+  process.env.ORIGIN_1,
+  process.env.ORIGIN_2
+];
+
 app.use(
   cors({
-    origin: CLIENT_ORIGIN,
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     credentials: true, //The credentials option tells the browser whether to include cookies and HTTP authentication headers
   })
 );
